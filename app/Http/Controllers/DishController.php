@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Allergen;
+use App\Models\Dish;
 use Illuminate\Http\Request;
 
-class AllergenController extends Controller
+class DishController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $a= Allergen::all();
-        return response()->json(['data' =>$a]);
-        
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -28,7 +34,15 @@ class AllergenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Allergen $allergen)
+    public function show(Dish $dish)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Dish $dish)
     {
         //
     }
@@ -36,7 +50,7 @@ class AllergenController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Allergen $allergen)
+    public function update(Request $request, Dish $dish)
     {
         //
     }
@@ -44,7 +58,7 @@ class AllergenController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Allergen $allergen)
+    public function destroy(Dish $dish)
     {
         //
     }
