@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dish extends Model
 {
-    public function course(){
-        return $this->belongsTo(Course::class);
+    public function dish(){
+        return $this->belongsToMany(Course::class, AlgDish::class);
     }
     public $table= 'dishes';
     protected $fillable=["courseId", "name","desc","ing","prep","cooktime"];
