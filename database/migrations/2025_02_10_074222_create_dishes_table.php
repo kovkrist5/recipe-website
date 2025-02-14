@@ -13,11 +13,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('dishes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->foreignId('courseId')->references('id')->on('courses');
             $table->string('name');
             $table->string('desc');
-            $table->string('ing'); //seperate with ;
+            
             $table->string('inst'); //seperate with ;
             $table->integer('prep'); //minutes
             $table->integer('cooktime'); //minutes

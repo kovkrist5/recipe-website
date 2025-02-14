@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alg_dish', function (Blueprint $table) {
+        Schema::create('ingredients', function (Blueprint $table) {
             
-            $table->foreignId('algId')->references('id')->on('allergens');
-            $table->foreignId('dishId')->references('id')->on('dishes');
+            $table->foreignId('dishid')->references('id')->on('dishes');
             
-
+            $table->string('ing'); //seperate with ;
+            
             
         });
     }

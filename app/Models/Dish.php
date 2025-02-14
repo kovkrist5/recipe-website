@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dish extends Model
 {
-    public function dish(){
-        return $this->belongsToMany(Course::class, AlgDish::class);
+    public function course(){
+        return $this->belongsTo(Course::class);
+        
+    }
+    public function ings(){
+        return $this->hasMany(Ingredient::class, "dishid");
     }
     public $table= 'dishes';
-    protected $fillable=["courseId", "name","desc","ing","prep","cooktime"];
+    protected $fillable=["courseId", "name","desc","prep","cooktime"];
 }
