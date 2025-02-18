@@ -17,11 +17,27 @@ class IngSeeder extends Seeder
         $ings=[
             [
                 "dishid"=>1,
-                "ing"=>"cherry"
+                "ing"=>"bread"
             ],
             [
                 "dishid"=>1,
-                "ing"=>"sugar"
+                "ing"=>"peanut butter"
+            ],
+            [
+                "dishid"=>1,
+                "ing"=>"jelly"
+            ],
+            [
+                "dishid"=>2,
+                "ing"=>"baguette"
+            ],
+            [
+                "dishid"=>2,
+                "ing"=>"garlic butter"
+            ],
+            [
+                "dishid"=>2,
+                "ing"=>"cheese"
             ],
         ];
         foreach ($ings as $i){

@@ -15,13 +15,22 @@ class DishSeeder extends Seeder
     {
         $Dishes=[
             [
-                "name"=>"Cherry pie",
-                "courseId"=>"6",
-                "desc"=>"(from 'tastesbetterfromscratch' by Lauren Allen) Homemade cherry pie is such an easy pie recipe and works great with fresh or canned cherries, so you can enjoy cherry pie all year round! ",
+                "name"=>"peanut butter sandwitch",
+                "courseId"=>"8",
+                "desc"=>"yummy pbj suitable for every meal",
                 
-                "inst"=>"idk im lazy to copy it;me when im a placeholder",
-                "prep"=>20,
-                "cooktime"=>45,
+                "inst"=>"take 2 slices of bread; put peanut butter on one; put a jam of your choice on the other; slap em togeter;enjoy!",
+                "prep"=>5,
+                "cooktime"=>null,
+            ],
+            [
+                "name"=>"garlic bread",
+                "courseId"=>"1",
+                "desc"=>"yummy garlic bread great with pasta",
+                
+                "inst"=>"take a baguette and cut into it; slather it with garlic butter; top it with the cheese of your choice; cook it in the oven for 10 minutes",
+                "prep"=>5,
+                "cooktime"=>10,
             ],
         ];
         foreach($Dishes as $d){

@@ -20,7 +20,7 @@ return new class extends Migration
             
             $table->string('inst'); //seperate with ;
             $table->integer('prep'); //minutes
-            $table->integer('cooktime'); //minutes
+            $table->integer('cooktime')->nullable(); //minutes
             $table->timestamps();
 
             
