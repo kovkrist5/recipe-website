@@ -13,7 +13,7 @@ class DishController extends Controller
      */
     public function index()
     {
-        return Dish::with("ings")->get();
+        return Dish::all();
     }
 
     /**
@@ -21,7 +21,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view("create");
     }
 
     /**
@@ -29,7 +29,14 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' =>'required',
+            
+        ]);
+       $dish= Dish::create($request->all());
+       return response($dish);
+
+
     }
 
     /**

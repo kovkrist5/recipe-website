@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\alg_dish;
 use App\Models\Allergen;
 
 use App\Models\Course;
@@ -88,7 +89,7 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
-            DishSeeder::class, IngSeeder::class
+            DishSeeder::class, IngSeeder::class, AlgDishSeeder::class
         ]);
     }
 }

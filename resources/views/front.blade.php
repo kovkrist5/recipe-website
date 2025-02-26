@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>front page</h1>
+    <button><a href="/create">new recipe</a></button>
     
 </body>
 </html>
