@@ -9,6 +9,13 @@
 <body>
     <h1>front page</h1>
     <button><a href="/create">new recipe</a></button>
+
+    <ul>
+        @foreach($Dish as $d)
+        <li>{{$d->id}} - {{$d->name}}</li>
+    </ul>
     
+
+     
 </body>
 </html>
