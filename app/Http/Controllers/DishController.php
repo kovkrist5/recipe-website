@@ -13,7 +13,8 @@ class DishController extends Controller
      */
     public function index()
     {
-        return Dish::all();
+        $dish= Dish::all();
+        return view('front', compact('dish'));
     }
 
     /**
@@ -33,8 +34,9 @@ class DishController extends Controller
             'name' =>'required',
             
         ]);
-       $dish= Dish::create($request->all());
-       return response($dish);
+       Dish::create($request->all());
+       return redirect('front')->with('success');
+       
 
 
     }
@@ -42,9 +44,14 @@ class DishController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Dish $dish)
+    public function show($id)
     {
-        //
+        $dish=Dish::find($id);
+        if(!$dish){
+            return("no dish found");
+        }
+        return view('show', compact('dish'));
+
     }
 
     /**
