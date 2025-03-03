@@ -10,7 +10,7 @@
     
    
     <h1>create recipe</h1>
-    <form action="{{route('dish')}}" method="post">
+    <form action="{{route('store')}}" method="post">
      @csrf
         <fieldset>
             <label for="name">recipe name: </label>

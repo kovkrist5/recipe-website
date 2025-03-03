@@ -57,17 +57,27 @@ class DishController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Dish $dish)
+    public function edit($id)
     {
-        //
+        $dish=Dish::find($id);
+        
+        return view('edit', compact('dish'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Dish $dish)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' =>'required',
+            
+        ]);
+
+        $dish=Dish::find($id);
+       $dish->name = $request->name;
+       $dish->save();
+       return view('front', compact('dish'));
     }
 
     /**

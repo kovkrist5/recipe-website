@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="container">
                     <ul id="headlist">
-                        <li><a href="{{ route('show' ,$d->id)}}">{{ $d->id }} - {{ $d->name }}</a></li>
+                        <li><a href="{{ route('dish' ,$d->id)}}">{{ $d->id }} - {{ $d->name }}</a></li>
                     </ul>
                 </div>
             </div>
