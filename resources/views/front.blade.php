@@ -14,10 +14,23 @@
     <link rel="stylesheet"href="./css/front.css" type="text/css">
     <title>Document</title>
 </head>
+<header>
+    <div class="topnav">
+        <div class="nav-links">
+            <a class="active" href="/home">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/create">Add new recipe</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <input type="text" placeholder="Search...">
+    </div>
+</header>
+<h1>Recipes here:</h1>
+<section>
 
+</section>
 <body>
-    <h1>front page</h1>
-    <button><a href="/create">new recipe</a></button>
     <ul>
         @foreach ($dish as $d)
             <div class="card">
