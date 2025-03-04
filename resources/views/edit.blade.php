@@ -1,5 +1,5 @@
 <h1>edit {{$dish->name}}</h1>
-<form action="{{route('update', $dish->id)}}" method="post">
+<form action="{{route('update', $dish->id)}}" >
     @method('PUT')
        <fieldset>
            <label for="name">recipe name: </label>
