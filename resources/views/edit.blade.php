@@ -1,4 +1,15 @@
-<h1>edit {{$dish->name}}</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/edit.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>edit {{$dish->name}}</h1>
 <form action="{{route('update', $dish->id)}}" method="post">
     @method('PUT')
        <fieldset>
@@ -12,3 +23,6 @@
        </fieldset>
        <button type="submit">save</button>
    </form>
+</body>
+</html>
+
