@@ -31,16 +31,16 @@
 
 </section>
 <body>
-    <ul>
+    
         @foreach ($dish as $d)
-            <div class="card">
                 <div class="container">
-                    <ul id="headlist">
-                        <li><a href="{{ route('dish' ,$d->id)}}">{{ $d->id }} - {{ $d->name }}</a></li>
-                    </ul>
+                <div class="card">
+                    <ul>
+                     <a href="{{ route('dish' ,$d->id)}}">{{ $d->id }} - {{ $d->name }}</a>
+                        </ul>
                 </div>
             </div>
-    </ul>
+    
     @endforeach
 
 

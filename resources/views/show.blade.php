@@ -23,7 +23,7 @@
 <div class="recipe-header-container">
     <h1> {{$dish->name}} </h1>
     <button><a href="{{ route('dish/edit' ,$dish->id)}}">edit recipe</a></button>
-    <button><a href="{{ route('dish/delete' ,$dish->id)}}">delete recipe</a></button> <!--make it muted red please, also align right-->
+    <button id="delete_button" ><a href="{{ route('dish/delete' ,$dish->id)}}">delete recipe</a></button><!--make it muted red please, also align right-->
 </div>
 </body>
 </html>
