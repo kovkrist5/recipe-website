@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class DishController extends Controller
 {
@@ -69,15 +70,12 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' =>'required',
-            
-        ]);
-
-        $dish=Dish::find($id);
-       $dish->name = $request->name;
-       $dish->save();
-       return view('front', compact('dish'));
+        
+        $dish= Dish::find($id);
+        $dish->update($request->all());
+        return redirect("dish/$id");
+        
+       
     }
 
     /**
