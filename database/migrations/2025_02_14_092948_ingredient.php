@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ingredients', function (Blueprint $table) {
-            
-            $table->foreignId('dishid')->references('id')->on('dishes');
-            
+
+            $table->foreignId('dishid')->references('id')->on('dishes')->onDelete('SET NULL');
+
             $table->string('ing'); //seperate with ;
-            
-            
+
+
         });
     }
 

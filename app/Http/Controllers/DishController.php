@@ -33,11 +33,11 @@ class DishController extends Controller
     {
         $request->validate([
             'name' =>'required',
-            
+
         ]);
        Dish::create($request->all());
        return redirect('front')->with('success');
-       
+
 
 
     }
@@ -61,7 +61,7 @@ class DishController extends Controller
     public function edit($id)
     {
         $dish=Dish::find($id);
-        
+
         return view('edit', compact('dish'));
     }
 
@@ -70,20 +70,23 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $dish= Dish::find($id);
         $dish->update($request->all());
         return redirect("dish/$id");
-        
-       
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Dish $dish)
+    public function destroy(Dish $dish, $id)
     {
-        //
+        $dish= Dish::find($id);
+        
+        $dish->delete();
+        return redirect('front')->with('success');
     }
 
 }

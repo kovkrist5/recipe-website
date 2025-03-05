@@ -16,6 +16,8 @@ Route::get('/update/{id}', [DishController::class, 'update'])->name("update");
 route::get('/front', [DishController::class, 'index']);
 route::get('/dish/{id}', [DishController::class, 'show'])->name("dish");
 route::get('dish/edit/{id}', [DishController::class, 'edit'])->name("dish/edit");
+route::get('dish/delete/{id}', [DishController::class, 'destroy'])->name("dish/delete");
 
 
-    
+
+
