@@ -1,0 +1,48 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ddcbbf;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.edit_align {
+margin: 20px;
+}
+
+/* Header Navigation */
+header {
+    background-color: #bda89b;
+    padding: 15px 20px;
+}
+
+.topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.topnav a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.topnav a:hover {
+    background-color: #c09d86;
+    color: white;
+}
+
+
+
