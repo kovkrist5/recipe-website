@@ -12,8 +12,33 @@ body {
 .edit_align {
 margin: 20px;
 }
+input {
+    border-radius: 4px;
+    padding: 7px 10px;
 
-/* Header Navigation */
+}
+.button_save {
+    padding: 7px 12px;
+    font-size: 16px;
+    border: 1px solid #964c2a;
+    background-color: #964c2a;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 50px;
+} 
+label {
+    font-weight: bolder;
+}
+#courseId {
+    padding: 7px 12px;
+    font-size: 16px;
+    border: 1px solid #964c2a;
+    background-color: #964c2a;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
 header {
     background-color: #bda89b;
     padding: 15px 20px;
@@ -43,6 +68,11 @@ header {
     background-color: #c09d86;
     color: white;
 }
+
+h1  {
+    margin: 10px;
+}
+
 
 
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/front.css" type="text/css">
+    <link rel="stylesheet" href="../../css/edit.css" type="text/css">
     <title>Edit Recipe</title>
 </head>
 
