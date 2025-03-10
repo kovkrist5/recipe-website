@@ -25,6 +25,7 @@
     </header>
     <div class="container">
         <h1>Edit {{ $dish->name }}</h1>
+        
         <form class="edit_align" action="{{ route('update', $dish->id) }}" method="post">
             <div>
                 @method('PUT')

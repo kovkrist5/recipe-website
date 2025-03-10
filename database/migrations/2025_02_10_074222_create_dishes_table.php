@@ -14,10 +14,10 @@ return new class extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('courseId')->references('id')->on('courses')->onDelete('SET NULL');
+            $table->foreignId('courseId')->references('id')->on('courses');
             $table->string('name');
             $table->string('desc')->nullable();
-
+            $table->string('img')->nullable();
             $table->string('inst')->nullable(); //seperate with ;
             $table->integer('prep')->nullable(); //minutes
             $table->integer('cooktime')->nullable(); //minutes
