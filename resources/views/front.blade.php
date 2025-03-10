@@ -20,7 +20,7 @@
             <a href="/create">Add new recipe</a>
             <a href="#contact">Contact</a>
         </div>
-        <input type="text" placeholder="Search...">
+        <input class="searching" type="text" placeholder="Search...">
     </div>
 </header>
 
@@ -32,6 +32,8 @@
             <div class="card">
                 <ul>
                     <a href="{{ route('dish' ,$d->id)}}">{{ $d->id }} - {{ $d->name }}</a>
+                    <img src="{{ asset('img' . $d->img) }}" alt="dish_img">
+                    <!-- ??????? like this, i don't know how to call it-->
                 </ul>
             </div>
             @endforeach
