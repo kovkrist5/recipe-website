@@ -41,7 +41,7 @@ h1 {
 }
 
 .topnav a:hover {
-    background-color: #403227; /* Lighter, more muted brown for hover */
+    background-color: #403227; /* for hover */
     transform: translateY(-3px);
 }
 
@@ -57,14 +57,35 @@ h1 {
 }
 
 /* Cards will now be stacked vertically */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards */
+    gap: 1.5rem; /* Spacing between cards */
+    padding: 2rem;
+}
+
 .card {
-    margin-left: 50px;
+    width: calc(33.33% - 1rem); /* 3 cards per row with spacing */
+    min-width: 250px; 
+    text-align: center;
     border-radius: 8px;
-    background-color: #835e46 ; /* Soft, muted beige with a grayish undertone */
+    background-color: #835e46;
     transition: 0.2s;
-    width: 40%; /* Fixed width for cards */
-    margin-bottom: 20px; /* Space between cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 900px) {
+    .card {
+        width: calc(50% - 1rem); /* 2 cards per row */
+    }
+}
+
+/* Responsive: 1 per row for small screens */
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%; /* Full width on small screens */
+    }
 }
 
 .card:hover {
@@ -112,5 +133,10 @@ a:hover {
     .topnav input[type=text] {
         width: 100%;
         margin-top: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%; /* Full width on smaller screens */
     }
 }
