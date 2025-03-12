@@ -34,7 +34,7 @@
                     <div class="card">
                         <div><a href="{{ route('dish', $d->id) }}">{{ $d->id }} - {{ $d->name }}</a></div>
                         <img src="{{ asset('img' . $d->img) }}" alt="dish_img">
-                        <!-- ??????? like this, i don't know how to call it-->
+                        <img src="{{$dish->img}}" alt="">
                     </div>
                 @endforeach
             </div>
