@@ -2,6 +2,7 @@
 
     <!DOCTYPE html>
     <html lang="en">
+    <!--images like this: <a> <img> </a>-->
 
     <head>
         <meta charset="UTF-8">
