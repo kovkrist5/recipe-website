@@ -27,14 +27,14 @@
     <h1>Recipes here:</h1>
 
     <body>
-
+        
         <main>
             <div class="card-container">
                 @foreach ($dish as $d)
                     <div class="card">
                         <div><a href="{{ route('dish', $d->id) }}">{{ $d->id }} - {{ $d->name }}</a></div>
-                        <img src="{{ asset('img' . $d->img) }}" alt="dish_img">
-                        <img src="{{$dish->img}}" alt="">
+                        
+                        <img src="{{$d->img}}" alt="">
                     </div>
                 @endforeach
             </div>

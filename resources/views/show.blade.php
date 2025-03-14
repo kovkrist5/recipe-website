@@ -9,6 +9,7 @@
 </head>
 <body>
     <header>
+        
         <div class="topnav">
             <div class="nav-links">
                 <a class="active" href="/home">Home</a>
@@ -17,11 +18,12 @@
                 <a href="/create">Add new recipe</a>
                 <a href="#contact">Contact</a>
             </div>
-            <input type="text" placeholder="Search...">
+              <input type="text" placeholder="Search...">
         </div>
     </header>
 <div class="recipe-header-container">
     <h1> {{$dish->name}} </h1>
+    <a href=""><img src="{{$dish->img}}" alt="" srcset=""></a>
     <button><a href="{{ route('dish/edit' ,$dish->id)}}">edit recipe</a></button>
     <button id="delete_button" ><a href="{{ route('dish/delete' ,$dish->id)}}">delete recipe</a></button><!--make it muted red please, also align right-->
 </div>
