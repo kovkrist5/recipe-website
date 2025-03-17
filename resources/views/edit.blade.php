@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/edit.css" type="text/css">
-    <title>Edit Recipe</title>
-</head>
+@section('content')
+@section('title', '| Edit oldal')
+@section('css', '../../css/edit.css')
 
 <body>
     <!-- Header Section -->
@@ -41,6 +36,5 @@
                 <button class="button_save" type="submit">Save</button>
             </div>
     </div>
-</body>
-
-</html>
+    
+    @endsection
