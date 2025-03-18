@@ -1,6 +1,6 @@
-
+/*COLOR IDEAS https://www.color-hex.com/color-palette/1056873*/
 body {
-    background-color: #BA9674;
+    background-color: #faf3e0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #3a2f1e;
     box-sizing: border-box;
@@ -21,7 +21,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #834F36; 
+    background-color: #b99a63; 
     padding: 15px 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -41,12 +41,13 @@ h1 {
 }
 
 .topnav a:hover {
-    background-color: #403227; 
+    background-color: #611313; 
+    color: #dad9d9;
     transform: translateY(-3px);
 }
 
 .topnav a.active {
-    background-color: #5e4b3b; 
+    background-color: #7d1d1d; 
 }
 
 .topnav input[type=text] {
