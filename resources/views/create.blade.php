@@ -41,9 +41,11 @@
             <button>+</button><!--make it add another <li>-->
         <button type="submit">save</button>
         <!--checkboxes for allergens-->
-        @foreach ($alg as $a)
-            <input type="checkbox" name="checkbox" id="{{$a->id}}">
-            <label for="checkbox">{{ $a->name }}</label>
+       <fieldset>
+        @foreach($definedvariable as $a)
+            {{$a['allergenName']}}
         @endforeach
+       
+       </fieldset>
     </form>
     @endsection

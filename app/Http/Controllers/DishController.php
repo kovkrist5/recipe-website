@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Allergen;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,7 @@ class DishController extends Controller
      */
     public function index()
     {
+        
         $dish= Dish::all();
         return view('front', compact('dish'));
     }
@@ -23,7 +25,8 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view("create");
+        $definedvariable= Allergen::all();
+        return view('create', compact($definedvariable));
     }
 
     /**
@@ -35,6 +38,7 @@ class DishController extends Controller
             'name' =>'required',
 
         ]);
+        
        Dish::create($request->all());
        return redirect('front')->with('success');
 
