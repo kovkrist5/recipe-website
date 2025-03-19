@@ -1,6 +1,9 @@
 /*COLOR IDEAS https://www.color-hex.com/color-palette/1056873*/
 body {
-    background-color: #faf3e0;
+   /* background-color: #faf3e0; */
+    background: linear-gradient(0deg, rgba(116,83,47,0.6082632882254464) 0%, rgba(250,243,224,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #3a2f1e;
     box-sizing: border-box;
