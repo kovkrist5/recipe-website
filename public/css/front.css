@@ -1,4 +1,5 @@
 /*COLOR IDEAS https://www.color-hex.com/color-palette/1056873*/
+
 body {
    /* background-color: #faf3e0; */
     background: linear-gradient(0deg, rgba(116,83,47,0.6082632882254464) 0%, rgba(250,243,224,1) 100%);
@@ -59,8 +60,6 @@ h1 {
     border: 1px solid #a1947a; 
     border-radius: 5px;
 }
-
-
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -70,25 +69,69 @@ h1 {
 }
 
 .card {
+    flex-grow: 0 !important;
+    align-self: flex-start !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin: 10px;
     width: calc(33.33% - 1rem); 
     min-width: 250px; 
-    text-align: center;
     border-radius: 8px;
     background-color: #835e46;
-    transition: 0.2s;
+    transition: all 0.3s ease-in-out;
     padding: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative; /* Ensures only one expands */
 }
+
+.card-header {
+    background-color: #6a4a3c;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px 8px 0 0;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hidden content, no reserved space */
+.card-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Expands only the hovered card */
+.card:hover .card-body {
+    max-height: 150px; /* Adjust this based on content */
+    padding: 10px;
+    opacity: 1;
+}
+
+/* Prevents other cards from stretching */
+.card-container .card:not(:hover) .card-body {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 900px) {
     .card {
-        width: calc(50% - 1rem); /* 2 cards per row */
+        width: calc(50% - 1rem);
     }
 }
 
-/* Responsive: 1 per row for small screens */
 @media screen and (max-width: 600px) {
     .card {
-        width: 100%; /* Full width on small screens */
+        width: 100%;
     }
 }
 
