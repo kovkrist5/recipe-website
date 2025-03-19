@@ -10,9 +10,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/create', function () {
-    return view('create');
-});
+Route::get('/create',  [DishController::class, 'create'])->name("create");
 
 
 Route::post('/store', [DishController::class, 'store'])->name("store");

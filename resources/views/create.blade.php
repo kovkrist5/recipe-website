@@ -13,15 +13,10 @@
         </fieldset>
         <fieldset>
             <select name="courseId" id="">
+                @foreach ($course as $c )
+                    <option value="{{$c->id}}">{{$c->courseName}}</option>
+                @endforeach
                 
-                <option value="1">appetizer</option>
-                <option value="2">soup</option>
-                <option value="3">main dish</option>
-                <option value="4">side dish</option>
-                <option value="5">salad</option>
-                <option value="6">dessert</option>
-                <option value="7">pastry</option>
-                <option value="8">other</option>
             </select>
         </fieldset>
 
@@ -42,8 +37,9 @@
         <button type="submit">save</button>
         <!--checkboxes for allergens-->
        <fieldset>
-        @foreach($definedvariable as $a)
-            {{$a['allergenName']}}
+        @foreach($alg as $a)
+            <input type="checkbox" name="{{ $a->allergenName }}" id="{{$a->id}}">
+            <label for="{{ $a->allergenName }}">{{ $a->allergenName }}</label>
         @endforeach
        
        </fieldset>

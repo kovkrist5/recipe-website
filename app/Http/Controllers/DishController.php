@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Allergen;
+use App\Models\Course;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -25,8 +26,9 @@ class DishController extends Controller
      */
     public function create()
     {
-        $definedvariable= Allergen::all();
-        return view('create', compact($definedvariable));
+        $alg= Allergen::all();
+        $course= Course::all();
+        return view('create', ['alg'=>$alg, 'course'=>$course]);
     }
 
     /**
