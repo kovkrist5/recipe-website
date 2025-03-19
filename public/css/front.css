@@ -82,7 +82,7 @@ h1 {
     padding: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    position: relative; /* Ensures only one expands */
+    position: relative;
 }
 
 .card-header {
@@ -99,7 +99,7 @@ h1 {
     border-bottom: 1px solid #ddd;
 }
 
-/* Hidden content, no reserved space */
+
 .card-body {
     max-height: 0;
     overflow: hidden;
@@ -108,21 +108,21 @@ h1 {
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Expands only the hovered card */
+
 .card:hover .card-body {
-    max-height: 150px; /* Adjust this based on content */
+    max-height: 150px;
     padding: 10px;
     opacity: 1;
 }
 
-/* Prevents other cards from stretching */
+
 .card-container .card:not(:hover) .card-body {
     max-height: 0;
     padding: 0;
     opacity: 0;
 }
 
-/* Responsive Adjustments */
+
 @media screen and (max-width: 900px) {
     .card {
         width: calc(50% - 1rem);
@@ -144,7 +144,7 @@ h1 {
     padding: 10px 20px;
 }
 
-/* List Styles */
+
 ul {
     padding: 15px;
     list-style-type: square;
@@ -152,15 +152,15 @@ ul {
 
 a {
     text-decoration: none;
-    color: #000000; /* Desaturated brown for links */
+    color: #000000;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #000000; /* Darker brown on hover */
+    color: #000000; 
 }
 
-/* Responsive Design */
+
 @media screen and (max-width: 768px) {
     .topnav {
         flex-direction: column;
@@ -173,8 +173,8 @@ a:hover {
     }
 
     .card {
-        width: 100%; /* Full width on smaller screens */
-        margin-left: 0; /* Remove left margin on smaller screens */
+        width: 100%; 
+        margin-left: 0; 
     }
 
     .topnav input[type=text] {
@@ -184,6 +184,6 @@ a:hover {
 }
 @media screen and (max-width: 768px) {
     .card {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
     }
 }
