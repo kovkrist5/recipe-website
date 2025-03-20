@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\alg_dish;
 use App\Models\Allergen;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,8 @@ class AllergenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        
     }
 
     /**
