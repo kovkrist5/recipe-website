@@ -19,7 +19,7 @@
                         <div><a href="{{ route('dish', $d->id) }}">{{ $d->id }} - {{ $d->name }}</a></div>
                         <img src="{{$d->img}}" alt="">
                         <div class="card-body">
-                            <p>{{$d-> description ?? 'no desc available'}}</p>
+                            <p>{{$d->desc ?? 'no desc available'}}</p>
                         </div>
                     </div>
                 @endforeach
