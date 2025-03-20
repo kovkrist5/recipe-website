@@ -38,10 +38,14 @@ class DishController extends Controller
     {
         $request->validate([
             'name' =>'required',
+            
 
         ]);
         
-       Dish::create($request->all());
+        $dish= new Dish();
+        $dish->name = $request="name";
+        $dish->save();
+       
        return redirect('front')->with('success');
 
 
