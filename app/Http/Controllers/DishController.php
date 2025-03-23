@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\alg_dish;
 use App\Models\Allergen;
 use App\Models\Course;
 use App\Models\Dish;
+use App\Models\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -38,10 +40,22 @@ class DishController extends Controller
     {
         $request->validate([
             'name' =>'required',
+            'courseId'=>'required'
+            
 
         ]);
+        $dish= new Dish();
+        $dish->name=$request->name;
+        $dish->courseId=$request->courseId;
+        $dish->save();
+
+        $ing= new Ingredient();
         
-       Dish::create($request->all());
+        
+        
+        
+        
+        
        return redirect('front')->with('success');
 
 
