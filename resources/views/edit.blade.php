@@ -1,23 +1,11 @@
 @extends('layouts.app')
+@section('content')
 
 @section('content')
 @section('title', '| Edit oldal')
-@section('css', '../../css/edit.css')
+@section('css', '../../css/front.css')
 
-<body>
-    <!-- Header Section -->
-    <header>
-        <nav class="topnav">
-            <div class="nav-links">
-                <a class="active" href="/home">Home</a>
-                <a href="/about">About</a>
-                <a href="/services">Services</a>
-                <a href="/create">Add new recipe</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <input type="text" class="search-box" placeholder="Search...">
-        </nav>
-    </header>
+
     <div class="container">
         <h1>Edit {{ $dish->name }}</h1>
         

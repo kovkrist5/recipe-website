@@ -2,7 +2,7 @@
 
 @section('content')
 @section('title', '| Show oldal')
-@section('css', '../css/show.css')
+@section('css', '../css/front.css')
 
 
 <div class="recipe-header-container">
