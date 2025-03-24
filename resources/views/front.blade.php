@@ -16,7 +16,7 @@
             <div class="card-container">
                 @foreach ($dish as $d)
                     <div class="card">
-                        <div><a href="{{ route('dish', $d->id) }}">{{ $d->id }} - {{ $d->name }}</a></div>
+                        <div><a href="{{ route('dish', $d->id) }}">{{ $d->name }}</a></div>
                         <img src="{{$d->img}}" alt="">
                         <div class="card-body">
                             <p>{{$d->desc ?? 'no desc available'}}</p>
