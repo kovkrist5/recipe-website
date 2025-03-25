@@ -21,7 +21,7 @@ newInput.id = `instruction_${instructionCount}`;
 
 newListItem.appendChild(newInput);
 
-instructionsList.appendChild(newListItem);
+instructionList.appendChild(newListItem);
 
 }
 //this is for removal

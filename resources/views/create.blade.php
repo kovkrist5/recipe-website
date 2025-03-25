@@ -5,7 +5,7 @@
 @section('content')
 @section('title', '| Create oldal') 
 @section('css', '../css/front.css')
-@section('js', '../js/addButton.js')
+
    
     <h1>create recipe</h1>
     <form action="{{route('store')}}" method="post">
@@ -34,13 +34,10 @@
             <ol>
                 <li>
                     <input type="text" name="desc" id="desc">
+                    <button type="button" onclick="addInput();">+</button>
+                    <button type="button" onclick="removeInput()">-</button>
                     </fieldset>  
                 </li>
-                <li>
-                        
-                      <input type="button" value="+" onClick="addInput();"> 
-                       <input type="button" value="-" onClick="removeInput();">
-                </li>>
             </ol>
 
         </fieldset>-->
