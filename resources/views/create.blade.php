@@ -8,7 +8,7 @@
     <form action="{{ route('store') }}" method="post">
         @csrf
         <fieldset>
-            <label for="name">Recipe Name: </label>
+            <label for="name"><b>Recipe Name:</b> </label>
             <input type="text" name="name" id="name">
         </fieldset>
         <fieldset>
@@ -20,12 +20,12 @@
         </fieldset>
 
         <fieldset>
-            <label for="desc">Description: </label>
+            <label for="desc"><b>Description:</b> </label>
             <input type="text" name="desc" id="desc">
         </fieldset>
 
   <fieldset>
-    <label for="instructions">Instructions: </label>
+    <label for="instructions"><b>Instructions:</b></label>
     <ol id="instructionsList">
         <li id="instruction_item_1">
             <input type="text" name="instructions[]" id="instruction_1">
@@ -34,12 +34,13 @@
         </li>
     </ol>
 </fieldset>
-
-
-    
         <!-- Allergens Checkboxes -->
+       
         <fieldset>
+
         <div class="allergen-container">
+        <label for="allegens"><b>Allergens:</b></label>
+
             @foreach($alg as $a)
                 <div class="allergen-item">
                 <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="allergen_{{ $a->id }}">
@@ -51,7 +52,7 @@
         <br>
         <button type="submit">Save</button>
     </form>
-    
+    <br>
     <!-- Include the external JavaScript file -->
     <script src="{{ asset('js/addInstructions.js') }}"></script>
 

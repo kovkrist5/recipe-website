@@ -269,7 +269,7 @@ input[type="text"] {
 #instructionsList input[type="text"] {
     width: 250px;
     height: 28px;
-    padding: 3px 8px;
+    
     font-size: 14px;
     border: 1px solid #63311d;
     border-radius: 10px;
@@ -300,15 +300,13 @@ input[type="text"] {
 
 
 .allergen-container input[type="checkbox"] {
-    margin-right: 2px; 
+    transform: scale(1.5); 
+    margin-right: 10px; 
 }
 
 .allergen-container label {
-    font-size: 16px;
-    display: inline-block;
-    margin-bottom: 0;
+    font-size: 18px; 
 }
-
 fieldset {
     border: 0;
 }
@@ -344,3 +342,8 @@ select option {
 select option:hover {
     background-color: #661717; 
 }
+
+
+input[type='checkbox']:checked {
+    background-color: #661717;
+  }
