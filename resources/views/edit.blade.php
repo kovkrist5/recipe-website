@@ -5,7 +5,6 @@
 @section('title', '| Edit oldal')
 @section('css', '../../css/front.css')
 
-
     <div class="container">
         <h1>Edit {{ $dish->name }}</h1>
         

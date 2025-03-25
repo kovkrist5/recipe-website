@@ -19,17 +19,19 @@
             </select>
         </fieldset>
 
-        <fieldset>
-            <label for="desc">Description: </label>
+        <!--<fieldset>
+            <label for="name">description: </label>
             <input type="text" name="desc" id="desc">
-        </fieldset>
+        </fieldset>-->
 
         <fieldset>
-            <label for="instructions">Instructions: </label>
-            <ol id="instructionsList">
-                <li id="instruction_item_1">
-                    <input type="text" name="instructions[]" id="instruction_1">
-                    <button type="button" onclick="removeInput('instruction_item_1')">-</button>
+            <label for="name">instructions: </label><--same with ingredients>
+            <ol>
+                <li>
+                    <input type="text" name="desc" id="desc">
+                    <button type="button" onclick="addInput();">+</button>
+                    <button type="button" onclick="removeInput()">-</button>
+                    </fieldset>  
                 </li>
             </ol>
             <button type="button" id="addButton">+</button>
