@@ -29,10 +29,10 @@
             <ol id="instructionsList">
                 <li id="instruction_item_1">
                     <input type="text" name="instructions[]" id="instruction_1">
-                    <button type="button" onclick="removeInput('instruction_item_1')">-</button>
+                    <button type="button" class="remove-btn" data-id="instruction_item_1">-</button>
+                    <button type="button" id="addButton">+</button>
                 </li>
             </ol>
-            <button type="button" id="addButton">+</button>
         </fieldset>
 
         <!-- Allergens Checkboxes -->
