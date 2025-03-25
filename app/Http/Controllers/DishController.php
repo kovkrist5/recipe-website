@@ -39,18 +39,27 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' =>'required',
-            'courseId'=>'required'
+            'name' =>'required|min:3',
+            'courseId'=>'required',
+            //'desc'=> 'string'
+            /*'ing'=>'array',
+            'ing.*'=>'exists:ing,dishid'*/
             
 
         ]);
-        $dish= new Dish();
-        $dish->name=$request->name;
-        $dish->courseId=$request->courseId;
-        $dish->save();
-
-        $ing= new Ingredient();
+        /*$dish=*/ Dish::create([
+            'name'=> $request['name'],
+            'courseId'=>$request['courseId'],
+            //'desc'=>$request['desc']
+        ]);
         
+        
+
+        /*Ingredient::create([
+            'dishid' =>$dish->id,
+            'ing'=> json_encode($request->ing),
+        ]);
+        */
         
         
         

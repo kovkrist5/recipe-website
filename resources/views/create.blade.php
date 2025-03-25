@@ -13,17 +13,34 @@
         </fieldset>
         <fieldset>
             <select name="courseId">
+                @foreach ($course as $c )
+                    <option value="{{$c->id}}">{{$c->courseName}}</option>
+            <select name="courseId">
                 @foreach ($course as $c)
                     <option value="{{ $c->id }}">{{ $c->courseName }}</option>
                 @endforeach
+                
             </select>
         </fieldset>
 
+        <!--<fieldset>
+            <label for="name">description: </label>
         <fieldset>
             <label for="desc">Description: </label>
             <input type="text" name="desc" id="desc">
-        </fieldset>
+        </fieldset>-->
 
+        <!--<fieldset>
+            <label for="name">instructions: </label><--same with ingredients>
+            <ol>
+                <li>
+                    <input type="text" name="desc" id="desc">
+                    </fieldset>  
+                </li>
+                <--<li>
+                        test<br><input type="text" name="myInputs[]"> 
+                        <input type="button" value="+" onClick="addInput();">
+                </li>>
         <fieldset>
             <label for="instructions">Instructions: </label>
             <ol id="instructionsList">
@@ -31,6 +48,19 @@
                     <input type="text" name="instructions[]" id="instruction_1">
                 </li>
             </ol>
+
+        </fieldset>-->
+        <!--<fieldset>
+            @foreach($alg as $a)
+                <input type="checkbox" name="{{ $a->allergenName }}" id="{{$a->id}}">
+                <label for="{{ $a->allergenName }}">{{ $a->allergenName }}</label>
+            @endforeach
+           
+           </fieldset> -->
+           <!--make it add another <li>-->
+        <button type="submit">save</button>
+        <!--checkboxes for allergens-->
+       
             <button type="button" onclick="addInput();">+</button>
             <button type="button" onclick="removeInput();">-</button>
         </fieldset>

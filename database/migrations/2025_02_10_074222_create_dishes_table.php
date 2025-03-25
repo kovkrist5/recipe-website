@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('courseId')->references('id')->on('courses');
+            $table->foreignId('courseId')->references('id')->on('courses')->default(8);
             $table->string('name');
             $table->string('desc')->nullable();
             $table->string('img')->nullable();

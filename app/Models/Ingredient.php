@@ -12,4 +12,8 @@ class Ingredient extends Model
     }
     public $timestamps= false;
     public $table= 'ingredients';
+
+    protected $casts = [
+        'ing'=>'array',
+    ];
 }
