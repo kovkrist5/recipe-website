@@ -206,20 +206,20 @@ a:hover {
 input[type="text"] {
     border-radius: 10px;
     border: 1px solid #63311d;
-    color: #ffffff;
-    width: 250px;  /* Ensures all input fields are the same width */
-    height: 30px;  /* Slightly increased for better alignment */
+    color: #000000;
+    width: 250px; 
+    height: 30px; 
     padding-left: 10px;
-    font-size: 16px;  /* Ensures consistent text size */
-    box-sizing: border-box; /* Prevents layout shifts */
+    font-size: 16px; 
+    box-sizing: border-box;
 }
 
 input[type="text"]:focus {
     outline: none;
-    border: 1px solid #a0d18c;
+    border: 1px solid #3f3f3f;
 }
 
-/* Button Styling */
+
 button {
     padding: 8px 20px;
     border-radius: 10px;
@@ -229,10 +229,10 @@ button {
     color: white;
     background-color: #661717;
     transition: background 0.3s ease-in-out;
-    padding: 8px 20px; /* Increased horizontal padding to elongate the buttons */
+    padding: 8px 20px; 
     border-radius: 20px;
     cursor: pointer;
-    width: auto; /* Ensures the button width is determined by padding */
+    width: auto; 
 }
 
 button:hover {
@@ -246,10 +246,9 @@ button:hover {
     padding: 0;
 }
 
-/* Instruction Items - Uses a grid for perfect alignment */
 #instructionsList li {
     display: grid;
-    grid-template-columns: auto auto auto; /* Input takes max space, buttons stay small */
+    grid-template-columns: auto auto auto;
     align-items: center;
     gap: 10px;
     padding: 15px;
@@ -259,14 +258,14 @@ button:hover {
 input[type="text"] {
     border-radius: 10px;
     border: 1px solid #63311d;
-    color: #ffffff;
+    color: #000000;
     width: 250px;
-    height: 28px; /* Reduced height for a thinner look */
-    padding: 3px 8px; /* Adjusted padding to match */
-    font-size: 14px; /* Slightly smaller font for balance */
+    height: 28px; 
+    padding: 3px 8px;
+    font-size: 14px; 
     box-sizing: border-box;
 }
-/* Ensure input fields are uniform */
+
 #instructionsList input[type="text"] {
     width: 250px;
     height: 28px;
@@ -276,7 +275,7 @@ input[type="text"] {
     border-radius: 10px;
     box-sizing: border-box;
 }
-/* Button Styling for Instruction Items */
+
 #instructionsList button {
     padding: 8px 12px;
     border-radius: 20px;
@@ -290,18 +289,18 @@ input[type="text"] {
 #instructionsList button:hover {
     background-color: #500e0e;
 }
-/* Style the allergen container */
+
 .allergen-container {
     text-align:left ;
     padding: 5px;
-    gap: 15px; /* Adds space between each checkbox */
+    gap: 15px; 
     border-radius: 10px;
     max-width: 500px; 
 }
 
-/* Style individual allergen checkbox and label */
+
 .allergen-container input[type="checkbox"] {
-    margin-right: 2px; /* Space between checkbox and label */
+    margin-right: 2px; 
 }
 
 .allergen-container label {
@@ -315,33 +314,33 @@ fieldset {
 }
 
 select {
-    padding: 5px 15px; /* Reduce padding to make the select box smaller */
-    font-size: 14px; /* Reduce font size for a more compact look */
-    border: 1px solid #63311d; /* Button border color */
-    background-color: #661717; /* Button-like background color */
-    color: white; /* Text color */
+    padding: 5px 15px; 
+    font-size: 14px; 
+    border: 1px solid #63311d; 
+    background-color: #661717; 
+    color: white; 
     border-radius: 10px;
     cursor: pointer;
-    width: 200px; /* Adjust width to make it more compact */
+    width: 200px; 
     transition: background-color 0.3s ease;
 }
 
-/* Style the select element on hover */
+
 select:hover {
-    background-color: #500e0e; /* Darker color on hover */
+    background-color: #500e0e; 
 }
 
-/* Styling for the options inside the dropdown */
+
 select option {
-    padding: 5px 10px; /* Adjust padding of options to make them smaller */
+    padding: 5px 10px; 
     background-color: #661717;
     color: white;
-    font-size: 14px; /* Reduce font size of options */
-    border: none; /* Remove default border */
+    font-size: 14px;
+    border: none;
     cursor: pointer;
 }
 
-/* Change color on option hover */
+
 select option:hover {
-    background-color: #661717; /* Darker background for options on hover */
+    background-color: #661717; 
 }

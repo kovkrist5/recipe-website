@@ -1,44 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
     let instructionCount = 1;
 
+    // Function to add a new input field with a remove button
     function addInput() {
         instructionCount++;
         const instructionsList = document.getElementById("instructionsList");
 
-        // Remove existing "+" button from last item
-        const existingPlusButton = document.getElementById("addButton");
-        if (existingPlusButton) {
-            existingPlusButton.remove();
-        }
-
-        // Create new item
+        // Create a new list item for the instruction
         const newListItem = document.createElement("li");
         newListItem.setAttribute("id", `instruction_item_${instructionCount}`);
 
-        // makes input field(s)
+        // Create an input field
         const newInput = document.createElement("input");
         newInput.type = "text";
         newInput.name = "instructions[]";
         newInput.id = `instruction_${instructionCount}`;
 
-        // Create remove button
+        // Create a remove button
         const removeButton = document.createElement("button");
         removeButton.type = "button";
         removeButton.innerText = "-";
         removeButton.classList.add("remove-btn");
         removeButton.setAttribute("data-id", `instruction_item_${instructionCount}`);
 
-        // Add input and "-" button
+        // Append the input and remove button to the new list item
         newListItem.appendChild(newInput);
         newListItem.appendChild(removeButton);
 
-        // Add the new list item to instructions list
+        // Append the new list item to the instructions list
         instructionsList.appendChild(newListItem);
 
-        //  the "+" button ONLY to the last item
+        // Make sure the "+" button is only on the last item
         addPlusButtonToLast();
     }
 
+    // Function to remove an instruction input
     function removeInput(event) {
         if (event.target.classList.contains("remove-btn")) {
             const itemId = event.target.getAttribute("data-id");
@@ -51,22 +47,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("At least one instruction is required.");
             }
 
-            // makes sure the plus is the last item (?)
+            // Ensure that the "+" button is always the last item
             addPlusButtonToLast();
         }
     }
 
+    // Function to add the "+" button to the last list item
     function addPlusButtonToLast() {
-        // takes out extra plus buttons
         const existingPlusButton = document.getElementById("addButton");
         if (existingPlusButton) {
             existingPlusButton.remove();
         }
 
-        // gets all list items cuh
+        // Get all list items
         const allItems = document.querySelectorAll("#instructionsList li");
 
-        // the thing that adds the last +
         if (allItems.length > 0) {
             const lastItem = allItems[allItems.length - 1];
 
@@ -80,9 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // i dont know 
+    // Attach the event listener to remove items when the remove button is clicked
     document.getElementById("instructionsList").addEventListener("click", removeInput);
 
-    // makes sure of something
+    // Make sure there's a "+" button on the last item initially
     addPlusButtonToLast();
 });

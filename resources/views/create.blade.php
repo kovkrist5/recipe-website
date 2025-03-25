@@ -23,8 +23,8 @@
             <label for="desc">Description: </label>
             <input type="text" name="desc" id="desc">
         </fieldset>
-        
-        <fieldset>
+
+  <fieldset>
     <label for="instructions">Instructions: </label>
     <ol id="instructionsList">
         <li id="instruction_item_1">
@@ -34,6 +34,7 @@
         </li>
     </ol>
 </fieldset>
+
 
     
         <!-- Allergens Checkboxes -->
