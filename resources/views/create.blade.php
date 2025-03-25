@@ -29,16 +29,17 @@
             <input type="text" name="desc" id="desc">
         </fieldset>-->
 
-        <!--<fieldset>
+        <fieldset>
             <label for="name">instructions: </label><--same with ingredients>
             <ol>
                 <li>
                     <input type="text" name="desc" id="desc">
                     </fieldset>  
                 </li>
-                <--<li>
-                        test<br><input type="text" name="myInputs[]"> 
-                        <input type="button" value="+" onClick="addInput();">
+                <li>
+                        
+                      <input type="button" value="+" onClick="addInput();"> 
+                       <input type="button" value="-" onClick="removeInput();">
                 </li>>
             </ol>
 

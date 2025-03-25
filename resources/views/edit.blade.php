@@ -2,7 +2,7 @@
 
 @section('content')
 @section('title', '| Edit oldal')
-@section('css', '../../css/edit.css')
+@section('css', '../../css/front.css')
 
 <body>
     <!-- Header Section -->
