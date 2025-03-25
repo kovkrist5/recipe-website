@@ -23,29 +23,34 @@
             <label for="desc">Description: </label>
             <input type="text" name="desc" id="desc">
         </fieldset>
-
+        
         <fieldset>
-            <label for="instructions">Instructions: </label>
-            <ol id="instructionsList">
-                <li id="instruction_item_1">
-                    <input type="text" name="instructions[]" id="instruction_1">
-                    <button type="button" class="remove-btn" data-id="instruction_item_1">-</button>
-                    <button type="button" id="addButton">+</button>
-                </li>
-            </ol>
-        </fieldset>
+    <label for="instructions">Instructions: </label>
+    <ol id="instructionsList">
+        <li id="instruction_item_1">
+            <input type="text" name="instructions[]" id="instruction_1">
+            <button type="button" class="remove-btn" data-id="instruction_item_1">-</button>
+            <button type="button" id="addButton">+</button>
+        </li>
+    </ol>
+</fieldset>
 
+    
         <!-- Allergens Checkboxes -->
         <fieldset>
+        <div class="allergen-container">
             @foreach($alg as $a)
+                <div class="allergen-item">
                 <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="allergen_{{ $a->id }}">
                 <label for="allergen_{{ $a->id }}">{{ $a->allergenName }}</label>
+                </div>
             @endforeach
+            <div class="allergen-container">
         </fieldset>
-
+        <br>
         <button type="submit">Save</button>
     </form>
-
+    
     <!-- Include the external JavaScript file -->
     <script src="{{ asset('js/addInstructions.js') }}"></script>
 

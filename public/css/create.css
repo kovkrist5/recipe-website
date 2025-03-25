@@ -1,4 +1,134 @@
+/* General Reset */
+* {
+    font-family: "Merriweather", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
- font-family: 'Sofia';
-    font-size: 22px;   
+    background: linear-gradient(0deg, rgba(116,83,47,0.6) 0%, rgba(250,243,224,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #3a2f1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center vertically */
+}
+
+/* Form Container */
+.form-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Form Heading */
+h1 {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Labels & Inputs */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a1947a;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #faf3e0;
+    color: #3a2f1e;
+    margin-bottom: 15px;
+}
+
+/* Instructions List */
+#instructionsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Instruction Items */
+#instructionsList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f6e6cc;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #835e46;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 20px; /* Rounded buttons */
+    transition: background 0.3s, transform 0.2s;
+    font-size: 16px;
+}
+
+/* Button Hover Effects */
+button:hover {
+    background-color: #6a4a3c;
+    transform: scale(1.05);
+}
+
+/* Remove Button (-) */
+.remove-btn {
+    background-color: #b22222;
+}
+
+.remove-btn:hover {
+    background-color: #7d1d1d;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #b99a63;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px; /* More rounded */
+}
+
+button[type="submit"]:hover {
+    background-color: #7d1d1d;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+    .form-container {
+        width: 90%;
+    }
+
+    #instructionsList li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        text-align: center;
+        margin-top: 5px;
+    }
 }
