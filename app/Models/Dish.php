@@ -14,5 +14,6 @@ class Dish extends Model
         return $this->hasMany(Ingredient::class, "dishid");
     }
     public $table= 'dishes';
+    protected $casts=["inst"=>"array"];
     protected $fillable=["courseId", "name","desc","img","prep","cooktime"];
 }
