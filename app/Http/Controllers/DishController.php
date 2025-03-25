@@ -41,7 +41,7 @@ class DishController extends Controller
         $request->validate([
             'name' =>'required|min:3',
             'courseId'=>'required',
-            //'desc'=> 'string'
+            'desc'=> 'string'
             /*'ing'=>'array',
             'ing.*'=>'exists:ing,dishid'*/
             
@@ -50,7 +50,7 @@ class DishController extends Controller
         /*$dish=*/ Dish::create([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
-            //'desc'=>$request['desc']
+            'desc'=>$request['desc']
         ]);
         
         
