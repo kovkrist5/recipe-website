@@ -43,8 +43,8 @@
 
             @foreach($alg as $a)
                 <div class="allergen-item">
-                <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="allergen_{{ $a->id }}">
-                <label for="allergen_{{ $a->id }}">{{ $a->allergenName }}</label>
+                <input type="checkbox" name="allergens[]" value="{{ $a[$i] }}" id="{{ $a->id }}">
+                <label for="{{ $a->id }}">{{ $a->allergenName }}</label>
                 </div>
             @endforeach
             <div class="allergen-container">

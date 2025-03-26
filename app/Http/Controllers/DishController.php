@@ -41,31 +41,35 @@ class DishController extends Controller
         $request->validate([
             'name' =>'required|min:3',
             'courseId'=>'required',
-            'desc'=> 'string'
-            /*'ing'=>'array',
-            'ing.*'=>'exists:ing,dishid'*/
+            'desc'=> 'string',
+            
+            /*'ing.*'=>'exists:ing,dishid'*/
             
 
         ]);
-        /*$dish=*/ Dish::create([
+        $dish= Dish::create([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
-            'desc'=>$request['desc']
+            'desc'=>$request['desc'],
+            'inst'=> json_encode($request->instructionsList),
         ]);
         
         
-
+        
         /*Ingredient::create([
             'dishid' =>$dish->id,
-            'ing'=> json_encode($request->ing),
+            'ing'=> json_encode($request->instructionsList),
+        ]);*/
+        
+        alg_dish::create([
+            'dishid'=>$dish->id,
+            
         ]);
-        */
         
         
         
         
-        
-       return redirect('front')->with('success');
+       return redirect('dish/'.$dish->id)->with('success','');
 
 
 

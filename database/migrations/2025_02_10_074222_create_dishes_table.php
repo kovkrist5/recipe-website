@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('desc')->nullable();
             $table->string('img')->nullable();
-            $table->string('inst')->nullable(); //seperate with ;
+            $table->json('inst')->nullable(); //seperate with ;
             $table->integer('prep')->nullable(); //minutes
             $table->integer('cooktime')->nullable(); //minutes
             $table->timestamps();
