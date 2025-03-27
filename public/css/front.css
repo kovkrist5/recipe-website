@@ -105,7 +105,6 @@ h1 {
     border-bottom: 1px solid #ddd;
 }
 
-
 .card-body {
     max-height: 0;
     overflow: hidden;
@@ -247,7 +246,6 @@ button:hover {
 }
 
 #instructionsList li {
-    display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
     gap: 10px;
@@ -269,7 +267,6 @@ input[type="text"] {
 #instructionsList input[type="text"] {
     width: 250px;
     height: 28px;
-    
     font-size: 14px;
     border: 1px solid #63311d;
     border-radius: 10px;
@@ -277,6 +274,7 @@ input[type="text"] {
 }
 
 #instructionsList button {
+    margin: 5px;
     padding: 8px 12px;
     border-radius: 20px;
     font-size: 16px;
@@ -346,4 +344,26 @@ select option:hover {
 
 input[type='checkbox']:checked {
     background-color: #661717;
-  }
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #661717;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background-color: #500e0e;
+}
+
+.recipe-image {
+    width: 250px; /* Adjust width */
+    height: 250px; /* Adjust height */
+    object-fit: cover; /* Ensures image scales nicely */
+    border-radius: 10px; /* Optional: rounded corners */
+    border: 2px solid #63311d; /* Optional: adds a border */
+}
