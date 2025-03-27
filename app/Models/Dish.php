@@ -10,10 +10,14 @@ class Dish extends Model
         return $this->belongsTo(Course::class);
 
     }
-    public function ings(){
+    /*public function ings(){
         return $this->hasMany(Ingredient::class, "dishid");
-    }
+    }*/
     public $table= 'dishes';
-    protected $casts=["inst"=>"array"];
-    protected $fillable=["courseId", "name","desc","inst","img","prep","cooktime"];
+    protected $casts=[
+        'ing'=>'array',
+
+        "inst"=>"array"
+    ];
+    protected $fillable=["courseId", "name","desc","ing", "inst","img","prep","cooktime"];
 }

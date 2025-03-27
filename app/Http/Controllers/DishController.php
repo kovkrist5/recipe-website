@@ -18,7 +18,7 @@ class DishController extends Controller
      */
     public function index()
     {
-        
+
         $dish= Dish::all();
         return view('front', compact('dish'));
     }
@@ -43,9 +43,10 @@ class DishController extends Controller
             'courseId'=>'required',
             'desc'=> 'string',
             'inst'=> 'array',
-            
+            'ing'=>'array'
+
             /*'ing.*'=>'exists:ing,dishid'*/
-            
+
 
         ]);
         $dish= Dish::create([
@@ -53,23 +54,24 @@ class DishController extends Controller
             'courseId'=>$request['courseId'],
             'desc'=>$request['desc'],
             'inst'=> $request['instructions'],
+            'ing'=>$request['ingredients']
         ]);
-        
-        
-        
+
+
+
         /*Ingredient::create([
             'dishid' =>$dish->id,
             'ing'=> json_encode($request->instructionsList),
         ]);*/
-        
+
         /*alg_dish::create([
             'dishid'=>$dish->id,
             'inst'=> $request['instructions']
         ]);*/
-        
-        
-        
-        
+
+
+
+
        return $request; //redirect('dish/'.$dish->id)->with('success','');
 
 
@@ -94,7 +96,7 @@ class DishController extends Controller
      */
     public function edit($id)
     {
-        
+
         $dish=Dish::find($id);
 
         return view('edit', compact('dish'));
@@ -119,7 +121,7 @@ class DishController extends Controller
     public function destroy(Dish $dish, $id)
     {
         $dish= Dish::find($id);
-        
+
         $dish->delete();
         return redirect('front')->with('success');
     }

@@ -21,7 +21,6 @@ route::get('dish/edit/{id}', [DishController::class, 'edit'])->name("dish/edit")
 route::get('dish/delete/{id}', [DishController::class, 'destroy'])->name("dish/delete");
 
 
-route::get("/allergens", [AllergenController::class, 'index']);
 
 
 

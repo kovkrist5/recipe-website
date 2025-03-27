@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@section('title', '| Create Recipe') 
+@section('title', '| Create Recipe')
 @section('css', '../css/front.css')
 
 
@@ -36,7 +36,7 @@
     </ol>
 </fieldset>
         <!-- Allergens Checkboxes -->
-       
+
         <fieldset>
 
         <div class="allergen-container">
@@ -44,8 +44,8 @@
             <!--find out why it sends as null-->
             @foreach($alg as $a)
                 <div class="allergen-item">
-                <input type="checkbox" name="allergens[]" value="{{ $a->algid }}" id="{{ $a->algid }}">
-                <label for="allergens[]">{{ $a->allergenName }}</label>
+                <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="{{ $a->id }}">
+                <label for="{{ $a->id }}">{{ $a->allergenName }}</label>
                 </div>
             @endforeach
             <div class="allergen-container">
@@ -55,6 +55,6 @@
     </form>
     <br>
     <!-- Include the external JavaScript file -->
-    <script src="{{ asset('js/addInstructions.js') }}"></script> <!--make it more universal so we can use the same code for isnt and ing-->
+    <script src="{{ asset('js/addInstruction.js') }}"></script> <!--make it more universal so we can use the same code for isnt and ing-->
 
 @endsection
