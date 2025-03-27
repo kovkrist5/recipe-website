@@ -15,5 +15,5 @@ class Dish extends Model
     }
     public $table= 'dishes';
     protected $casts=["inst"=>"array"];
-    protected $fillable=["courseId", "name","desc","img","prep","cooktime"];
+    protected $fillable=["courseId", "name","desc","inst","img","prep","cooktime"];
 }

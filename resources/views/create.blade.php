@@ -4,6 +4,7 @@
 @section('title', '| Create Recipe') 
 @section('css', '../css/front.css')
 
+
     <h1>Create Recipe</h1>
     <form action="{{ route('store') }}" method="post">
         @csrf
@@ -30,7 +31,7 @@
         <li id="instruction_item_1">
             <input type="text" name="instructions[]" id="instruction_1">
             <button type="button" class="remove-btn" data-id="instruction_item_1">-</button>
-            <button type="button" id="addButton">+</button>
+            <button type="button" id="addButton">+</button> <!--same with ingredients array and plus-->
         </li>
     </ol>
 </fieldset>
@@ -40,11 +41,11 @@
 
         <div class="allergen-container">
         <label for="allegens"><b>Allergens:</b></label>
-
+            <!--find out why it sends as null-->
             @foreach($alg as $a)
                 <div class="allergen-item">
-                <input type="checkbox" name="allergens[]" value="{{ $a[$i] }}" id="{{ $a->id }}">
-                <label for="{{ $a->id }}">{{ $a->allergenName }}</label>
+                <input type="checkbox" name="allergens[]" value="{{ $a->algid }}" id="{{ $a->algid }}">
+                <label for="allergens[]">{{ $a->allergenName }}</label>
                 </div>
             @endforeach
             <div class="allergen-container">
@@ -54,6 +55,6 @@
     </form>
     <br>
     <!-- Include the external JavaScript file -->
-    <script src="{{ asset('js/addInstructions.js') }}"></script>
+    <script src="{{ asset('js/addInstructions.js') }}"></script> <!--make it more universal so we can use the same code for isnt and ing-->
 
 @endsection

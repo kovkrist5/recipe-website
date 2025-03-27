@@ -42,6 +42,7 @@ class DishController extends Controller
             'name' =>'required|min:3',
             'courseId'=>'required',
             'desc'=> 'string',
+            'inst'=> 'array',
             
             /*'ing.*'=>'exists:ing,dishid'*/
             
@@ -51,7 +52,7 @@ class DishController extends Controller
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
             'desc'=>$request['desc'],
-            'inst'=> json_encode($request->instructionsList),
+            'inst'=> $request['instructions'],
         ]);
         
         
@@ -61,15 +62,15 @@ class DishController extends Controller
             'ing'=> json_encode($request->instructionsList),
         ]);*/
         
-        alg_dish::create([
+        /*alg_dish::create([
             'dishid'=>$dish->id,
-            
-        ]);
+            'inst'=> $request['instructions']
+        ]);*/
         
         
         
         
-       return redirect('dish/'.$dish->id)->with('success','');
+       return $request; //redirect('dish/'.$dish->id)->with('success','');
 
 
 
@@ -93,6 +94,7 @@ class DishController extends Controller
      */
     public function edit($id)
     {
+        
         $dish=Dish::find($id);
 
         return view('edit', compact('dish'));

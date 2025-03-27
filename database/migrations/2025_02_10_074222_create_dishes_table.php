@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('desc')->nullable();
             $table->string('img')->nullable();
-            $table->json('inst')->nullable(); //seperate with ;
+            $table->json('inst'); //seperate with ;
             $table->integer('prep')->nullable(); //minutes
             $table->integer('cooktime')->nullable(); //minutes
             $table->timestamps();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dishes');
+        //Schema::dropIfExists('dishes');
     }
 };
