@@ -3,8 +3,9 @@
 @section('content')
 @section('title', '| Create Recipe')
 @section('css', '../css/front.css')
-
-
+    <!-- ALIGN EVERYTHING TO THE CENTER !!!!!!!!!!!!! -->
+    <!--      -->
+    <fieldset id="body-of-the-page">
     <h1>Create Recipe</h1>
     <form action="{{ route('store') }}" method="post">
         @csrf
@@ -74,3 +75,4 @@
     <!--make it more universal so we can use the same code for isnt and ing-->
 
 @endsection
+</fieldset>
