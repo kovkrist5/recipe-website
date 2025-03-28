@@ -72,7 +72,7 @@ class DishController extends Controller
 
 
 
-       return $request; //redirect('dish/'.$dish->id)->with('success','');
+       return redirect('dish/'.$dish->id)->with('success','');
 
 
 

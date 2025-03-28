@@ -41,7 +41,7 @@ class IngSeeder extends Seeder
             ],
         ];
         foreach ($ings as $i){
-            Ingredient::create($i);
+            //Ingredient::create($i);
         }
     }
 }
