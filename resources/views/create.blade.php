@@ -23,7 +23,7 @@
        <fieldset>
         <label for="image" class="custom-file-upload"> Click to Upload Image </label>
         <input type="file" id="image" name="image" accept="image/*" style="display: none;">
-        </fieldset>
+        </fieldset> <!--watch a video about this!!!!!!!!!!!!!!-->
 
 
         <fieldset>
