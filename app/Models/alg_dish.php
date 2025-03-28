@@ -13,7 +13,7 @@ class alg_dish extends Model
         }
         public $timestamps= false;
         public $table= 'alg_dish';
-        protected $fillable=['id', "dishid"];
-        protected $casts=["id"=> "array"];
+        protected $fillable=['dishid', "alg"];
+        //protected $casts=["id"=> "array"];
     
 }

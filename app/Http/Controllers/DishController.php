@@ -43,7 +43,8 @@ class DishController extends Controller
             'courseId'=>'required',
             'desc'=> 'string',
             'inst'=> 'array',
-            'ing'=>'array'
+            'ing'=>'array',
+            'allergens'=>'array'
 
             /*'ing.*'=>'exists:ing,dishid'*/
 
@@ -54,7 +55,8 @@ class DishController extends Controller
             'courseId'=>$request['courseId'],
             'desc'=>$request['desc'],
             'inst'=> $request['instructions'],
-            'ing'=>$request['ingredients']
+            'ing'=>$request['ingredients'],
+            
         ]);
 
 
@@ -63,11 +65,21 @@ class DishController extends Controller
             'dishid' =>$dish->id,
             'ing'=> json_encode($request->instructionsList),
         ]);*/
+        $count = count($request['allergens']);
+        if($count== 0){
+            return redirect('dish/'.$dish->id)->with('success','');
 
-        /*alg_dish::create([
-            'dishid'=>$dish->id,
-            'inst'=> $request['instructions']
-        ]);*/
+        }
+        else{
+            foreach ($request['allergens'] as $a) {
+                alg_dish::create([
+                    'dishid'=>$dish->id,
+                    'alg'=> $a
+                ]);
+            }
+        }
+        
+       
 
 
 
