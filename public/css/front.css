@@ -367,3 +367,35 @@ input[type='checkbox']:checked {
     border-radius: 10px; /* Optional: rounded corners */
     border: 2px solid #63311d; /* Optional: adds a border */
 }
+
+
+
+.recipe-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 700px;
+    background: #faf3e06e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.allergen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.allergen-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
