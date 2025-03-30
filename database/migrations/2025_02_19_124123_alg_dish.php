@@ -15,7 +15,7 @@ return new class extends Migration
 
             $table->foreignId('dishid')->references('id')->on('dishes');
 
-            $table->foreignId('alg')->references('id')->on('allergens');
+            $table->foreignId('alg')->references('id')->on('allergens')->nullable();
 
 
         });

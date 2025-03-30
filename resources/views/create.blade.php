@@ -22,7 +22,8 @@
        <fieldset>
         <label for="image" class="custom-file-upload"> Click to Upload Image </label>
         <input type="file" id="image" name="image" accept="image/*" style="display: none;">
-        </fieldset>
+        </fieldset> <!--watch a video about this!!!!!!!!!!!!!!-->
+
 
         <fieldset>
             <label for="desc"><b>Description:</b> </label>
@@ -48,26 +49,27 @@
                 </li>
             </ol>
         </fieldset>
+            <!-- Allergens Checkboxes -->
 
-        <fieldset>
-            <div class="allergen-container">
-                <label for="allergens"><b>Allergens:</b></label>
-                <div class="allergen-grid">
+            <fieldset>
+
+                <div class="allergen-container">
+                    <label for="allegens"><b>Allergens:</b></label>
+                    <!--find out why it sends as null-->
                     @foreach($alg as $a)
                         <div class="allergen-item">
                             <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="{{ $a->id }}">
                             <label for="{{ $a->id }}">{{ $a->allergenName }}</label>
                         </div>
                     @endforeach
-                </div>
-            </div>
-        </fieldset>
-
-        <br>
-        <button type="submit">Save</button>
+                    <div class="allergen-container">
+            </fieldset>
+            <br>
+            <button type="submit">Save</button>
     </form>
-</div>
+    <br>
+    <!-- Include the external JavaScript file -->
+    <script src="{{ asset('js/DynamicList.js') }}"></script>
+    <!--make it more universal so we can use the same code for isnt and ing-->
 
-<br>
-<script src="{{ asset('js/DynamicList.js') }}"></script>
-@endsection
+</fieldset>

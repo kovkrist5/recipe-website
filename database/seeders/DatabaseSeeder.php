@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
-            DishSeeder::class, IngSeeder::class, AlgDishSeeder::class
+            DishSeeder::class, AlgDishSeeder::class
         ]);
     }
 }
