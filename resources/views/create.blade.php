@@ -49,27 +49,28 @@
                 </li>
             </ol>
         </fieldset>
-            <!-- Allergens Checkboxes -->
 
-            <fieldset>
-
-                <div class="allergen-container">
-                    <label for="allegens"><b>Allergens:</b></label>
-                    <!--find out why it sends as null-->
+        <fieldset>
+            <div class="allergen-container">
+                <label for="allergens"><b>Allergens:</b></label>
+                <div class="allergen-grid">
+                     <!--find out why it sends as null-->
                     @foreach($alg as $a)
                         <div class="allergen-item">
                             <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="{{ $a->id }}">
                             <label for="{{ $a->id }}">{{ $a->allergenName }}</label>
                         </div>
                     @endforeach
-                    <div class="allergen-container">
-            </fieldset>
-            <br>
-            <button type="submit">Save</button>
-    </form>
-    <br>
-    <!-- Include the external JavaScript file -->
-    <script src="{{ asset('js/DynamicList.js') }}"></script>
-    <!--make it more universal so we can use the same code for isnt and ing-->
+                </div>
+            </div>
+        </fieldset>
 
+        <br>
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+<br>
+<script src="{{ asset('js/DynamicList.js') }}"></script>
+@endsection
 </fieldset>
