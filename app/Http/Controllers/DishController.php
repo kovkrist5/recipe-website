@@ -56,7 +56,7 @@ class DishController extends Controller
             'desc'=>$request['desc'],
             'inst'=> $request['instructions'],
             'ing'=>$request['ingredients'],
-            
+
         ]);
 
 
@@ -78,8 +78,8 @@ class DishController extends Controller
                 ]);
             }
         }
-        
-       
+
+
 
 
 
@@ -127,10 +127,10 @@ class DishController extends Controller
             'desc'=>$request['desc'],
             'inst'=> $request['instructions'],
             'ing'=>$request['ingredients'],
-            
+
         ]);
-        
-        
+
+
         return redirect("dish/$id");
 
     }
@@ -140,13 +140,17 @@ class DishController extends Controller
      */
     public function destroy(Dish $id, alg_dish $dishid)
     {
-        $dish=Dish::find($id)->delete();
-        $algdish=alg_dish::find($dishid)->delete();
+        $dish=Dish::find($id);
+        $alg=alg_dish::find($dishid);
 
+
+        if($id=$dishid){
+            $alg->delete();
+        }
         $dish->delete();
-        $algdish->delete();
-        
-        
+
+
+
         return redirect('front')->with('success');
     }
 
