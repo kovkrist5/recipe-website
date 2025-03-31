@@ -5,23 +5,10 @@
 
     <div class="container">
         <h1>Edit {{ $dish->name }}</h1>
-        
-        <form class="edit_align" action="{{ route('update', $dish->id) }}" method="post">
-            <div>
-                @method('PUT')
-                <label for="name">Recipe Name:</label>
-                <input type="text" name="name" id="name" value="{{ old('name', $dish->name) }}">
-                <br>
-                <br>
-                <label for="courseId">Select Type of Course:</label>
 
-                <select name="courseId" id="courseId">
-                    <option value="8">Other</option>
-                </select>
-                <button class="button_save" type="submit">Save</button>
-            </div>
+
     </div>
-    
+
     @endsection
 
     <div class="recipe-form-container">
@@ -35,7 +22,7 @@
             <fieldset>
 
                 <select name="courseId">
-                    <option value="">choose type of course...</option>
+                    
                     @foreach ($course as $c)
                         <option value="{{ $c->id }}">{{ $c->courseName }}</option>
                     @endforeach
@@ -45,13 +32,13 @@
             <label for="image" class="custom-file-upload"> Click to Upload Image </label>
             <input type="file" id="image" name="image" accept="image/*" style="display: none;">
             </fieldset> <!--watch a video about this!!!!!!!!!!!!!!-->
-    
-    
+
+
             <fieldset>
                 <label for="desc"><b>Description:</b> </label>
                 <input type="text" name="desc" id="desc" value="{{ old('name', $dish->desc) }}" >
             </fieldset>
-    
+
             <fieldset>
                 <label for="instructions"><b>Instructions:</b></label>
                 <ol id="instructionsList" class="dynamic-list" data-input-name="instructions[]">
@@ -61,7 +48,7 @@
                     </li>
                 </ol>
             </fieldset>
-    
+
             <fieldset>
                 <label for="ingredients"><b>Ingredients:</b></label>
                 <ol id="instructionsList" class="dynamic-list" data-input-name="ingredients[]">
@@ -71,7 +58,7 @@
                     </li>
                 </ol>
             </fieldset>
-    
+
             <fieldset>
                 <div class="allergen-container">
                     <label for="allergens"><b>Allergens:</b></label>
@@ -86,12 +73,12 @@
                     </div>
                 </div>
             </fieldset>
-    
+
             <br>
             <button type="submit">Save</button>
         </form>
     </div>
-    
+
     <br>
     <script src="{{ asset('js/DynamicList.js') }}"></script>
     @endsection
