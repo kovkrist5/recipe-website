@@ -13,7 +13,9 @@
             <input type="text" name="name" id="name">
         </fieldset>
         <fieldset>
+           
             <select name="courseId">
+                <option value="">choose type of course...</option>
                 @foreach ($course as $c)
                     <option value="{{ $c->id }}">{{ $c->courseName }}</option>
                 @endforeach
@@ -64,7 +66,7 @@
                 </div>
             </div>
         </fieldset>
-
+        <!--PREP AND COOKTIME-->
         <br>
         <button type="submit">Save</button>
     </form>

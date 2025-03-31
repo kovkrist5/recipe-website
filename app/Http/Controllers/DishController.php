@@ -121,20 +121,32 @@ class DishController extends Controller
     {
 
         $dish= Dish::find($id);
-        $dish->update($request->all());
+        $dish->update([
+            'name'=> $request['name'],
+            'courseId'=>$request['courseId'],
+            'desc'=>$request['desc'],
+            'inst'=> $request['instructions'],
+            'ing'=>$request['ingredients'],
+            
+        ]);
+        
+        
         return redirect("dish/$id");
-
 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Dish $dish, $id)
+    public function destroy(Dish $id, alg_dish $dishid)
     {
-        $dish= Dish::find($id);
+        $dish=Dish::find($id)->delete();
+        $algdish=alg_dish::find($dishid)->delete();
 
         $dish->delete();
+        $algdish->delete();
+        
+        
         return redirect('front')->with('success');
     }
 

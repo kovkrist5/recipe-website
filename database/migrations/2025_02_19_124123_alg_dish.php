@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('alg_dish', function (Blueprint $table) {
 
-            $table->foreignId('dishid')->references('id')->on('dishes');
+            $table->foreignId('dishid')->references('id')->on('dishes')->onDelete('cascade');
 
-            $table->foreignId('alg')->references('id')->on('allergens')->nullable();
+            $table->foreignId('alg')->references('id')->on('allergens')->nullable()->onDelete('cascade');
 
 
         });

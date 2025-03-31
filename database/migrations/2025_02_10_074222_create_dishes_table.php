@@ -14,12 +14,12 @@ return new class extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('courseId')->references('id')->on('courses')->default(8);
+            $table->foreignId('courseId')->references('id')->on('courses')->default(8)->onDelete('cascade');
             $table->string('name');
             $table->string('desc')->nullable();
             $table->string('img')->nullable();
-            $table->string('ing')->nullable();
-            $table->json('inst'); //seperate with ;
+            $table->string('ing');
+            $table->json('inst'); 
             $table->integer('prep')->nullable(); //minutes
             $table->integer('cooktime')->nullable(); //minutes
             $table->timestamps();
