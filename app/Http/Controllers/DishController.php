@@ -10,6 +10,8 @@ use App\Models\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Psy\Exception\BreakException;
+use Symfony\Component\Console\Logger\ConsoleLogger;
 
 class DishController extends Controller
 {
@@ -65,12 +67,15 @@ class DishController extends Controller
             'dishid' =>$dish->id,
             'ing'=> json_encode($request->instructionsList),
         ]);*/
-        $count = count($request['allergens']);
-        if($count== 0){
+
+        if($request['allergens']->isEmpty()){
+           
             return redirect('dish/'.$dish->id)->with('success','');
+
 
         }
         else{
+
             foreach ($request['allergens'] as $a) {
                 alg_dish::create([
                     'dishid'=>$dish->id,
@@ -78,11 +83,6 @@ class DishController extends Controller
                 ]);
             }
         }
-
-
-
-
-
 
        return redirect('dish/'.$dish->id)->with('success','');
 
@@ -109,9 +109,10 @@ class DishController extends Controller
     public function edit($id)
     {
 
-        $dish=Dish::find($id);
-
-        return view('edit', compact('dish'));
+        $id=Dish::find($id);
+        $alg= Allergen::all();
+        $course= Course::all();
+        return view('create', ['alg'=>$alg, 'course'=>$course,'id'=>$id]);
     }
 
     /**
@@ -138,15 +139,12 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Dish $id, alg_dish $dishid)
+    public function destroy(string $id)
     {
         $dish=Dish::find($id);
-        $alg=alg_dish::find($dishid);
 
 
-        if($id=$dishid){
-            $alg->delete();
-        }
+
         $dish->delete();
 
 

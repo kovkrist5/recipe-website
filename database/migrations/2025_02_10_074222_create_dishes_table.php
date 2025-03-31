@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('img')->nullable();
             $table->string('ing');
             $table->json('inst');
-            
             $table->integer('prep')->nullable(); //minutes
             $table->integer('cooktime')->nullable(); //minutes
             $table->timestamps();
