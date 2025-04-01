@@ -130,8 +130,7 @@ class DishController extends Controller
             'ing'=>$request['ingredients'],
 
         ]);
-
-
+        
         return redirect("dish/$id");
 
     }
@@ -142,7 +141,7 @@ class DishController extends Controller
     public function destroy(string $id)
     {
         $dish=Dish::find($id);
-
+        
 
 
         $dish->delete();

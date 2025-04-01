@@ -14,7 +14,7 @@
                 <input type="text" name="name" id="name" value="{{ old('name', $dish->name) }}">
             </fieldset>
             <fieldset>
-
+                
                 <select name="courseId">
                     
                     @foreach ($course as $c)
@@ -30,26 +30,31 @@
 
             <fieldset>
                 <label for="desc"><b>Description:</b> </label>
-                <input type="text" name="desc" id="desc" value="{{ old('name', $dish->desc) }}" >
+                <input type="text" name="desc" id="desc" value="{{ old('desc', $dish->desc) }}" >
             </fieldset>
 
             <fieldset>
+                
                 <label for="instructions"><b>Instructions:</b></label>
                 <ol id="instructionsList" class="dynamic-list" data-input-name="instructions[]">
-                    <li id="instructionsList_item_1">
-                        <input type="text" name="instructions[]" id="instructionsList_input_1">
-                        <button id="addButton" type="button" class="remove-btn" data-id="instructionsList_item_1">-</button>
-                    </li>
+                    @foreach ( $dish->inst as $i )
+                        <li id="instructionsList_item_1">
+                            <input type="text" value="{{ old('inst', $i) }}" name="instructions[]" id="instructionsList_input_1">
+                            <button id="addButton" type="button" class="remove-btn" data-id="instructionsList_item_1">-</button>
+                        </li>
+                    @endforeach  
                 </ol>
             </fieldset>
 
             <fieldset>
                 <label for="ingredients"><b>Ingredients:</b></label>
                 <ol id="instructionsList" class="dynamic-list" data-input-name="ingredients[]">
-                    <li id="ingredientsList_item_1">
-                        <input type="text" name="ingredients[]" id="ingredientsList_input_1">
+                   @foreach ($dish->ing as $i )
+                   <li id="ingredientsList_item_1">
+                        <input type="text" value="{{ old('ing', $i) }}" name="ingredients[]" id="ingredientsList_input_1">
                         <button id="addButton" type="button" class="remove-btn" data-id="ingredientsList_item_1">-</button>
                     </li>
+                   @endforeach
                 </ol>
             </fieldset>
 
@@ -57,7 +62,7 @@
                 <div class="allergen-container">
                     <label for="allergens"><b>Allergens:</b></label>
                     <div class="allergen-grid">
-                         <!--find out why it sends as null-->
+                         
                         @foreach($alg as $a)
                             <div class="allergen-item">
                                 <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="{{ $a->id }}">
