@@ -3,16 +3,10 @@
 @section('title', '| Edit oldal')
 @section('css', '../../css/front.css')
 
-    <div class="container">
-        <h1>Edit {{ $dish->name }}</h1>
-
-
-    </div>
-
-    @endsection
+   
 
     <div class="recipe-form-container">
-        <h1>Create Recipe</h1>
+        <h1>Edit {{$dish->name}}</h1>
         <form class="edit_align" action="{{ route('update', $dish->id) }}" method="post">
             @csrf
             <fieldset>

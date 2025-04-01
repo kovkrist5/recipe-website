@@ -30,7 +30,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        $alg= Allergen::all();
+       $alg= Allergen::all();
         $course= Course::all();
         return view('create', ['alg'=>$alg, 'course'=>$course]);
     }
@@ -109,10 +109,10 @@ class DishController extends Controller
     public function edit($id)
     {
 
-        $id=Dish::find($id);
+        $dish=Dish::find($id);
         $alg= Allergen::all();
         $course= Course::all();
-        return view('create', ['alg'=>$alg, 'course'=>$course,'id'=>$id]);
+        return view('edit', ['alg'=>$alg, 'course'=>$course,'dish'=>$dish]);
     }
 
     /**
