@@ -22,8 +22,15 @@
             </select>
         </fieldset>
        <fieldset>
-        <label for="image" class="custom-file-upload"> Click to Upload Image </label>
+       <div class="image-upload-container">
+        <label for="image" class="custom-file-upload">
+                <div class="placeholder-image">
+                    <span class="upload-text">Click to Upload Image</span>
+                </div>
+        </label>
         <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+        </div>
+
         </fieldset> <!--watch a video about this!!!!!!!!!!!!!!-->
 
 

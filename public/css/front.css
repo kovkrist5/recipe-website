@@ -399,3 +399,38 @@ input[type='checkbox']:checked {
     gap: 10px;
     white-space: nowrap;
 }
+
+.image-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.placeholder-image {
+    width: 250px;
+    height: 250px;
+    background: url('your-placeholder-image.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #643131;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.placeholder-image:hover {
+    border-color: #500e0e7e;
+    transform: scale(1);
+}
+
+.upload-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(102, 23, 23, 0.8);
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+}
