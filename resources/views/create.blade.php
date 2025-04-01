@@ -2,7 +2,7 @@
 
 @section('content')
 @section('title', '| Create Recipe')
-@section('css', '../css/front.css')
+@section('css', '/css/front.css')
 
 <div class="recipe-form-container">
     <h1>Create Recipe</h1>
