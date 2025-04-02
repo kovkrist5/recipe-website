@@ -1,18 +1,37 @@
 @extends('layouts.app')
-
 @section('content')
-@section('title', '| Show oldal')
-@section('css', '../css/front.css')
+@section('title', '| Show Recipe')
+@section('css', '../../css/front.css')
 
-
-<div class="recipe-header-container">
-    <h1> {{$dish->name}} </h1>
-    <a href=""><img src="{{$dish->img}}" alt="" srcset=""></a>
-
-    <button><a href="{{ route('edit' ,$dish->id)}}">edit recipe</a></button>
-    <button id="delete_button" ><a href="{{ route('dish/delete' ,$dish->id)}}">delete recipe</a></button><!--make it muted red please, also align right-->
+<div class="recipe-show-container">
+    <h1>{{ $dish->name }}</h1>
+    <div class="recipe-content">
+        <div class="recipe-image">
+            <img src="{{ asset('storage/images/' . $dish->image) }}" alt="{{ $dish->name }}">
+        </div>
+        <div class="recipe-details">
+            <p><b>Description:</b> {{ $dish->desc }}</p>
+            <p><b>Course:</b> {{ $dish->course }}</p>
+            <p><b>Instructions:</b></p>
+            <ol>
+                @foreach ($dish->inst as $i)
+                    <li>{{ $i }}</li>
+                @endforeach
+            </ol>
+            <p><b>Ingredients:</b></p>
+            <ul>
+                @foreach ($dish->ing as $i)
+                    <li>{{ $i }}</li>
+                @endforeach
+            </ul>
+            <p><b>Allergens:</b></p>
+            <ul>
+                @foreach ($alg as $a)
+                    @if(in_array($a->id, $dish->allergens))
+                        <li>{{ $a->allergenName }}</li>
+                    @endif
+                @endforeach
+            </ul>
+        </div>
+    </div>
 </div>
-
-@endsection
-
-

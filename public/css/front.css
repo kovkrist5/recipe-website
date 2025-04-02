@@ -434,3 +434,26 @@ input[type='checkbox']:checked {
     border-radius: 10px;
     text-align: center;
 }
+.recipe-show-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #faf3e06e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.recipe-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.recipe-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #63311d;
+}
+.recipe-details {
+    flex: 1;
+}
