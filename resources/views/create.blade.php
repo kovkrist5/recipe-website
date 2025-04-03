@@ -6,7 +6,7 @@
 
 <div class="recipe-form-container">
     <h1>Create Recipe</h1>
-    <form action="{{ route('store') }}" method="post">
+    <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <fieldset>
             <label for="name"><b>Recipe Name:</b> </label>
@@ -28,7 +28,7 @@
                     <span class="upload-text">Click to Upload Image</span>
                 </div>
         </label>
-        <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+        <input type="file" id="image" class="form-control" name="image" accept="image/*" style="display: none;">
         </div>
 
         </fieldset> <!--watch a video about this!!!!!!!!!!!!!!-->

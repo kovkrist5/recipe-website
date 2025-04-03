@@ -44,6 +44,7 @@ class DishController extends Controller
             'name' =>'required|min:3',
             'courseId'=>'required',
             'desc'=> 'string',
+            'img'=> 'nullable|mimes:png,jpg,jpeg',
             'inst'=> 'array',
             'ing'=>'array',
             'allergens'=>'array'
@@ -52,10 +53,18 @@ class DishController extends Controller
 
 
         ]);
+        if($request->has('image')){
+            $img =$request->file('image');
+            $ext= $img->getClientOriginalExtension() ;
+            $filename=time().'.'.$ext;
+            $imgpath='public/img';
+            $img->move($imgpath,$filename);
+        }
         $dish= Dish::create([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
             'desc'=>$request['desc'],
+            'img'=>$imgpath.$filename,
             'inst'=> $request['instructions'],
             'ing'=>$request['ingredients'],
 
