@@ -95,7 +95,7 @@ class DishController extends Controller
      */
     public function show($id)
     {
-        $dish=Dish::find($id);
+        $dish=Dish::with(['course', 'allergens'])->find( $id ) ;
         $alg= Allergen::all();
         $course= Course::all();
         $algid= alg_dish::where('dishid', $dish->id)->get();
