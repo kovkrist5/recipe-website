@@ -27,9 +27,7 @@
             <p><b>Allergens:</b></p>
             <ul>
                 @foreach ($alg as $a)
-                    @if(in_array($a->id, $dish->allergens))
-                        <li>{{ $a->allergenName }}</li>
-                    @endif
+                    {{$a->alg}}
                 @endforeach
             </ul>
         </div>

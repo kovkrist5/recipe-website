@@ -18,7 +18,7 @@
                 <select name="courseId">
                     
                     @foreach ($course as $c)
-                        <option value="{{ $c->id }}">{{ $c->courseName }}</option>
+                        <option value="{{ $c->id }}"{{ $dish->course->id==$c->id ? 'selected':'' }}>{{$c->courseName}}</option>
                     @endforeach
                 </select>
             </fieldset>
@@ -65,7 +65,7 @@
                          
                         @foreach($alg as $a)
                             <div class="allergen-item">
-                                <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="{{ $a->id }}">
+                                <input type="checkbox" name="allergens[]" value="{{ $a->id }}" id="{{ $a->id }}" {{in_array($a->id, $dish->allergens->pluck('id')->toArray())? 'checked':''}}>
                                 <label for="{{ $a->id }}">{{ $a->allergenName }}</label>
                             </div>
                         @endforeach

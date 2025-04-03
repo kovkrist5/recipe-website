@@ -68,7 +68,7 @@ class DishController extends Controller
             'ing'=> json_encode($request->instructionsList),
         ]);*/
 
-        if($request['allergens']->isEmpty()){
+        if(empty($request['allergens'])){
            
             return redirect('dish/'.$dish->id)->with('success','');
 
@@ -96,10 +96,15 @@ class DishController extends Controller
     public function show($id)
     {
         $dish=Dish::find($id);
+        $alg= Allergen::all();
+        $course= Course::all();
+        $algid= alg_dish::where('dishid', $dish->id)->get();
         if(!$dish){
             return("no dish found");
         }
-        return view('show', compact('dish'));
+        //return view('show', compact('dish'));
+        return view("show", ["algid"=>$algid,'alg'=>$alg, 'course'=>$course,"dish"=>$dish]);
+       // return ["algid"=>$algid, 'course'=>$course,"dish"=>$dish];
 
     }
 
@@ -109,7 +114,7 @@ class DishController extends Controller
     public function edit($id)
     {
 
-        $dish=Dish::find($id);
+        $dish=Dish::with(['course', 'allergens'])->find( $id );
         $alg= Allergen::all();
         $course= Course::all();
         return view('edit', ['alg'=>$alg, 'course'=>$course,'dish'=>$dish]);
