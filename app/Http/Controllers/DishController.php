@@ -57,7 +57,7 @@ class DishController extends Controller
             $img =$request->file('image');
             $ext= $img->getClientOriginalExtension() ;
             $filename=time().'.'.$ext;
-            $imgpath='public/img';
+            $imgpath='public/img/';
             $img->move($imgpath,$filename);
         }
         $dish= Dish::create([
