@@ -26,15 +26,10 @@
             </ul>
             <p><b>Allergens:</b></p>
             <ul>
-                @foreach ($algid as $aid)
-                    @foreach($alg as $a)
-                    
-                        @if ($aid->alg == $a->id)
-                            {{$a->allergenName}} <!--baby make this look gorgeous like you pretty please-->
-                        @endif
-                    
-                    @endforeach
+                @foreach ($dish->allergens as $a )
+                    {{$a->allergenName}}<!--baby make this look gorgeous like you pretty please-->
                 @endforeach
+              
             </ul>
             <button><a href="{{ route('edit' ,$dish->id)}}">edit recipe</a></button>
             <button id="delete-button" ><a href="{{ route('dish/delete' ,$dish->id)}}">delete recipe</a></button><!--make it muted red please, also align right-->
