@@ -30,6 +30,11 @@
                     {{$a->alg}}
                 @endforeach
             </ul>
+            <button><a href="{{ route('edit' ,$dish->id)}}">edit recipe</a></button>
+            <button id="delete-button" ><a href="{{ route('dish/delete' ,$dish->id)}}">delete recipe</a></button><!--make it muted red please, also align right-->
+            </div>
         </div>
     </div>
 </div>
+
+@endsection
