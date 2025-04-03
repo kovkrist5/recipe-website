@@ -7,6 +7,7 @@ use App\Models\Allergen;
 use App\Models\Course;
 use App\Models\Dish;
 use App\Models\Ingredient;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -57,14 +58,17 @@ class DishController extends Controller
             $img =$request->file('image');
             $ext= $img->getClientOriginalExtension() ;
             $filename=time().'.'.$ext;
-            $imgpath='public/img/';
+            $imgpath='dishimg/';
             $img->move($imgpath,$filename);
+        }
+        else{
+            $filename='dish.jpg';
         }
         $dish= Dish::create([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
             'desc'=>$request['desc'],
-            'img'=>$imgpath.$filename,
+            'img'=>$filename,
             'inst'=> $request['instructions'],
             'ing'=>$request['ingredients'],
 
@@ -155,9 +159,15 @@ class DishController extends Controller
     public function destroy(string $id)
     {
         $dish=Dish::find($id);
+       if (Storage::exists("dishimg/".$dish->img)) {
+            //if( $dish->img!="dish.jpg") {
+                Storage::delete("dishimg/".$dish->img);
+            
+               // }
+        }
+            
+
         
-
-
         $dish->delete();
 
 

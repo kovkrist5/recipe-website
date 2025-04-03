@@ -7,7 +7,7 @@
     <h1>{{ $dish->name }}</h1>
     <div class="recipe-content">
         <div class="recipe-image">
-            <img src="{{ $dish->img }}" alt="{{ $dish->name }}">
+            <img src="../dishimg/{{ $dish->img }}" alt="{{ $dish->name }}">
         </div>
         <div class="recipe-details">
             <p><b>Description:</b> {{ $dish->desc }}</p>
