@@ -11,7 +11,7 @@
         </div>
         <div class="recipe-details">
             <p><b>Description:</b> {{ $dish->desc }}</p>
-            <p><b>Course:</b> {{ $dish->course }}</p>
+            <p><b>Course:</b> {{ $dish->course->courseName }}</p>
             <p><b>Instructions:</b></p>
             <ol>
                 @foreach ($dish->inst as $i)
@@ -26,8 +26,14 @@
             </ul>
             <p><b>Allergens:</b></p>
             <ul>
-                @foreach ($alg as $a)
-                    {{$a->alg}}
+                @foreach ($algid as $aid)
+                    @foreach($alg as $a)
+                    
+                        @if ($aid->alg == $a->id)
+                            {{$a->allergenName}} <!--baby make this look gorgeous like you pretty please-->
+                        @endif
+                    
+                    @endforeach
                 @endforeach
             </ul>
             <button><a href="{{ route('edit' ,$dish->id)}}">edit recipe</a></button>
