@@ -91,8 +91,7 @@ class DishController extends Controller
 
             foreach ($request['allergens'] as $a) {
                 alg_dish::create([
-                    'dishid'=>$dish->id,
-                    'alg'=> $a
+                    
                 ]);
             }
         }
@@ -136,10 +135,26 @@ class DishController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, )
     {
 
         $dish= Dish::find($id);
+        $algid= alg_dish::where('dishid', $dish->id)->get();
+       // $message= "idk whats going on";
+
+       $request->validate([
+        'name' =>'required|min:3',
+        'courseId'=>'required',
+        'desc'=> 'string',
+        //'img'=> 'nullable|mimes:png,jpg,jpeg',
+        'inst'=> 'array',
+        'ing'=>'array',
+        'allergens'=>'array'
+
+        
+
+
+        ]);
         $dish->update([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
@@ -148,8 +163,32 @@ class DishController extends Controller
             'ing'=>$request['ingredients'],
 
         ]);
+        if(empty($request['allergens'])){
+           
+            return redirect('dish/'.$dish->id)->with('success','');
+
+
+        }
+        else{
+            foreach ($algid as $alg)
+                foreach($request['allergens'] as $a){
+                 {
+                    $alg->update([
+                        'dishid'=>$dish->id,
+                        'alg' => $a,
+                    ]);
+                    
+                }
+                
+                
+            }
+            
+            
+        }
+        /*$dish->save();
+        $algid->save();*/
         
-        return redirect("dish/$id");
+       // return redirect("dish/$id");
 
     }
 
@@ -159,11 +198,12 @@ class DishController extends Controller
     public function destroy(string $id)
     {
         $dish=Dish::find($id);
-       if (Storage::exists("dishimg/".$dish->img)) {
-            //if( $dish->img!="dish.jpg") {
-                Storage::delete("dishimg/".$dish->img);
-            
-               // }
+        $imgpath= public_path('dishimg/'.$dish->img);
+
+       if (file_exists($imgpath)) {
+                //Storage::disk()->delete("../dishimg/1743760478.jpg");
+            unlink($imgpath);
+             
         }
             
 
