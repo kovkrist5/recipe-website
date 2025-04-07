@@ -91,7 +91,8 @@ class DishController extends Controller
 
             foreach ($request['allergens'] as $a) {
                 alg_dish::create([
-                    
+                    'dishid'=>$dish->id,
+                        'alg' => $a,
                 ]);
             }
         }
@@ -139,7 +140,7 @@ class DishController extends Controller
     {
 
         $dish= Dish::find($id);
-        $algid= alg_dish::where('dishid', $dish->id)->get();
+        
        // $message= "idk whats going on";
 
        $request->validate([
@@ -163,6 +164,7 @@ class DishController extends Controller
             'ing'=>$request['ingredients'],
 
         ]);
+        alg_dish::where('dishid', $id)->delete();
         if(empty($request['allergens'])){
            
             return redirect('dish/'.$dish->id)->with('success','');
@@ -170,25 +172,23 @@ class DishController extends Controller
 
         }
         else{
-            foreach ($algid as $alg)
-                foreach($request['allergens'] as $a){
-                 {
-                    $alg->update([
-                        'dishid'=>$dish->id,
+            //foreach ($algid as $alg)
+            foreach ($request['allergens'] as $a) {
+                alg_dish::create([
+                    'dishid'=>$dish->id,
                         'alg' => $a,
-                    ]);
-                    
-                }
-                
-                
+                ]);
             }
+                
+                
+           // }
             
             
         }
         /*$dish->save();
         $algid->save();*/
         
-       // return redirect("dish/$id");
+       return redirect("dish/$id");
 
     }
 
