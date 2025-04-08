@@ -573,3 +573,33 @@ input[type='checkbox']:checked {
     font-size: 1rem;
     cursor: pointer;
 }
+
+.time-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+    gap: 8px;
+}
+
+.time-input-group label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.time-input-group input[type="number"] {
+    border-radius: 10px;
+    border: 1px solid #63311d;
+    color: #000000;
+    width: 150px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 16px;
+    background-color: #fff7f0;
+    transition: border-color 0.3s ease;
+}
+
+.time-input-group input[type="number"]:focus {
+    border-color: #3f3f3f;
+    outline: none;
+}
