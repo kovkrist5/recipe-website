@@ -2,7 +2,7 @@
 @section('content')
 @section('title', '| Show Recipe')
 @section('css', '../../css/front.css')
-
+<!--make it so times show up and take out one of the allergen labels-->
     <div class="recipe-show-container">
         <h1>{{ $dish->name }}</h1>
         <div class="recipe-content">

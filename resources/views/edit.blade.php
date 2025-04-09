@@ -2,7 +2,7 @@
 @section('content')
 @section('title', '| Edit oldal')
 @section('css', '../../css/front.css')
-
+<!--put time buttons in-->
 
 
     <div class="recipe-form-container">
