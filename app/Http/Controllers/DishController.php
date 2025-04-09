@@ -48,7 +48,9 @@ class DishController extends Controller
             'img'=> 'nullable|mimes:png,jpg,jpeg',
             'inst'=> 'array',
             'ing'=>'array',
-            'allergens'=>'array'
+            'allergens'=>'array',
+            'prep'=>'integer',
+            'cooktime'=> 'nullable|integer',
 
             /*'ing.*'=>'exists:ing,dishid'*/
 
@@ -71,6 +73,8 @@ class DishController extends Controller
             'img'=>$filename,
             'inst'=> $request['instructions'],
             'ing'=>$request['ingredients'],
+            'prep'=>$request['prep'],
+            'cooktime'=>$request['cooktime']
 
         ]);
 
@@ -141,7 +145,7 @@ class DishController extends Controller
 
         $dish= Dish::find($id);
         
-       // $message= "idk whats going on";
+       // $message= "idk whats going on";+
 
        $request->validate([
         'name' =>'required|min:3',
