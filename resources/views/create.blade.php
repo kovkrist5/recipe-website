@@ -49,6 +49,16 @@
                 </ol>
             </fieldset>
 
+
+            <fieldset>
+                <label for="ingredients"><b>Ingredients:</b></label>
+                <ol id="instructionsList" class="dynamic-list" data-input-name="ingredients[]">
+                    <li id="ingredientsList_item_1">
+                        <input type="text" name="ingredients[]" id="ingredientsList_input_1">
+                        <button id="addButton" type="button" class="remove-btn" data-id="ingredientsList_item_1">-</button>
+                    </li>
+                </ol>
+            </fieldset>
             <fieldset>
                 <div class="time-input-group">
                     <label for="prep_time"><b>Preparation Time (minutes):</b></label>
@@ -59,16 +69,6 @@
                     <label for="cook_time"><b>Cook Time (minutes):</b></label>
                     <input type="number" name="cook_time" id="cook_time" min="0" step="5" value="0">
                 </div>
-            </fieldset>
-
-            <fieldset>
-                <label for="ingredients"><b>Ingredients:</b></label>
-                <ol id="instructionsList" class="dynamic-list" data-input-name="ingredients[]">
-                    <li id="ingredientsList_item_1">
-                        <input type="text" name="ingredients[]" id="ingredientsList_input_1">
-                        <button id="addButton" type="button" class="remove-btn" data-id="ingredientsList_item_1">-</button>
-                    </li>
-                </ol>
             </fieldset>
 
             <fieldset>
