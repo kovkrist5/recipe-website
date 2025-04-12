@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('allergens', function (Blueprint $table) {
             $table->id('id');
             $table->string('allergenName');
-
-            $table->timestamps();
         });
     }
 

@@ -13,7 +13,7 @@ class Dish extends Model
     /*public function ings(){
         return $this->hasMany(Ingredient::class, "dishid");
     }*/
-    public function allergens(){ 
+    public function allergens(){
         return $this->belongsToMany(Allergen::class,"alg_dish","dishid","alg");
     }
     public $table= 'dishes';
