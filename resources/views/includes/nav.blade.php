@@ -1,7 +1,7 @@
 <header>
     <div class="topnav">
         <div class="nav-links">
-            <a class="active" href="/front">Home</a>
+            <a class="active" href="/">Home</a>
             <a href="/create">Add new recipe</a>
         </div>
         <div class="search-container">

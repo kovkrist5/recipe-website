@@ -1,11 +1,14 @@
 /*COLOR IDEAS https://www.color-hex.com/color-palette/1056873*/
 * {
     font-family: "Merriweather", serif;
-  }
+}
+
 body {
-   /* background-color: #faf3e0; */
-   font-family: "Josefin Sans", sans-serif;
-    background: linear-gradient(0deg, rgba(116,83,47,0.6082632882254464) 0%, rgba(250,243,224,1) 100%);
+    /* background-color: #faf3e0; */
+
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #5e4536; 
+    color: #d6c1ab; 
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -17,18 +20,19 @@ body {
 
 h1 {
     padding: 15px;
-    color: #000000;
+    color: #e8dbc9;
     text-align: center;
 }
+
 .searching {
-    background-color: #dad9d9;
+    background-color: #d4c9c0;
 }
 
 .topnav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #435033; 
+    background-color: #301f16;
     padding: 15px 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -40,7 +44,7 @@ h1 {
 
 .topnav a {
     text-decoration: none;
-    color: #dad9d9;
+    color: #d6c1ab;
     font-size: 18px;
     padding: 10px 15px;
     border-radius: 5px;
@@ -48,42 +52,50 @@ h1 {
 }
 
 .topnav a:hover {
-    background-color: #611313; 
-    color: #dad9d9;
+    background-color: #4d3a2d; 
+    color: #f1e6d3;
     transform: translateY(-3px);
 }
 
 .topnav a.active {
-    background-color: #7d1d1d; 
+    background-color: #6b4c3b;
 }
 
 .topnav input[type=text] {
     padding: 8px;
     font-size: 16px;
-    border: 1px solid #a1947a; 
+    border: 1px solid #ffffff;
     border-radius: 5px;
 }
+
 .card-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 cards per row */
     gap: 1.5rem;
     padding: 2rem;
     justify-items: center;
 }
 
 .card {
-    width: 100%; /* Takes full width of its grid cell */
-    max-width: 350px; /* Optional: Prevents overly wide cards */
-    align-self: start; /* Prevents stretching */
+    width: 100%;
+    /* Takes full width of its grid cell */
+    max-width: 350px;
+    /* Optional: Prevents overly wide cards */
+    align-self: start;
+    /* Prevents stretching */
     border-radius: 8px;
-    background-color: #835e46;
+    background: #50110e;
+    color: #e1d3c4;
     transition: all 0.3s ease-in-out;
     padding: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
-    padding: 10px; /* Increased padding */
+    padding: 10px;
+    
 }
+
 .card a {
     text-align: center;
     font-weight: bold;
@@ -92,8 +104,8 @@ h1 {
 }
 
 .card-header {
-    background-color: #6a4a3c;
-    color: white;
+    background-color: #3b2b21;
+    color: #f3e9db;
     padding: 10px;
     font-size: 18px;
     border-radius: 8px 8px 0 0;
@@ -106,12 +118,14 @@ h1 {
 }
 
 .card-body {
+    color: #f0e6d9;
     max-height: 0;
     overflow: hidden;
     padding: 0;
     opacity: 0;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
 .card-body p {
     text-align: center;
 }
@@ -133,24 +147,27 @@ h1 {
 
 @media screen and (max-width: 1200px) {
     .card-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 cards per row */
     }
 }
 
 @media screen and (max-width: 900px) {
     .card-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
     }
 }
 
 @media screen and (max-width: 600px) {
     .card-container {
-        grid-template-columns: 1fr; /* 1 card per row */
+        grid-template-columns: 1fr;
+        /* 1 card per row */
     }
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
 
@@ -163,7 +180,8 @@ ul {
     padding: 15px;
     list-style-type: square;
 }
- /* edit delete */
+
+/* edit delete */
 a {
     text-decoration: none;
     color: #ffffff;
@@ -171,7 +189,7 @@ a {
 }
 
 #delete-button a:hover {
-    color: #ce0000; 
+    color: #ce0000;
 }
 
 
@@ -187,8 +205,8 @@ a {
     }
 
     .card {
-        width: 100%; 
-        margin-left: 0; 
+        width: 100%;
+        margin-left: 0;
     }
 
     .topnav input[type=text] {
@@ -196,6 +214,7 @@ a {
         margin-top: 10px;
     }
 }
+
 @media screen and (max-width: 768px) {
     .card {
         width: 100%;
@@ -204,23 +223,20 @@ a {
 
 input[type="text"] {
     border-radius: 10px;
-    border: 1px solid #63311d;
-    color: #000000;
-    width: 250px; 
-    height: 30px; 
+    background-color: #d8d2cf;
+    border: 1px solid #463224;
+    color: #e6d4be;
+    width: 250px;
+    height: 30px;
     padding-left: 10px;
-    font-size: 16px; 
+    font-size: 16px;
     box-sizing: border-box;
 }
 
 input[type="text"]:focus {
     outline: none;
-    border: 1px solid #3f3f3f;
+    border-color: #a8927a;
 }
-
-
-
-
 
 button {
     padding: 8px 20px;
@@ -228,13 +244,13 @@ button {
     font-size: 16px;
     flex-shrink: 0;
     border: none;
-    color: white;
-    background-color: #661717;
+    background-color: #4b0e0e;
+    color: #e8d8c0;
     transition: background 0.3s ease-in-out;
-    padding: 8px 20px; 
+    padding: 8px 20px;
     border-radius: 20px;
     cursor: pointer;
-    width: auto; 
+    width: auto;
 }
 
 button:hover {
@@ -244,7 +260,7 @@ button:hover {
 
 /* Instructions List */
 #instructionsList {
-    list-style-position: inside; 
+    list-style-position: inside;
     padding: 0;
 }
 
@@ -256,14 +272,15 @@ button:hover {
     border-radius: 10px;
     width: fit-content;
 }
+
 input[type="text"] {
     border-radius: 10px;
-    border: 1px solid #63311d;
-    color: #000000;
+    border: 1px solid #d8d6d5;
+    color: #cf2929;
     width: 250px;
-    height: 28px; 
+    height: 28px;
     padding: 3px 8px;
-    font-size: 14px; 
+    font-size: 14px;
     box-sizing: border-box;
 }
 
@@ -284,6 +301,7 @@ input[type="text"] {
     flex-shrink: 0;
     border: none;
     cursor: pointer;
+    background-color: #4b0e0e;
     transition: background 0.3s ease-in-out;
 }
 
@@ -292,46 +310,47 @@ input[type="text"] {
 }
 
 .allergen-container {
-    text-align:left ;
+    text-align: left;
     padding: 5px;
-    gap: 15px; 
+    gap: 15px;
     border-radius: 10px;
-    max-width: 500px; 
+    max-width: 500px;
 }
 
 
 .allergen-container input[type="checkbox"] {
-    transform: scale(1.5); 
-    margin-right: 10px; 
+    transform: scale(1.5);
+    margin-right: 10px;
 }
 
 .allergen-container label {
-    font-size: 18px; 
+    font-size: 18px;
 }
+
 fieldset {
     border: 0;
 }
 
 select {
-    padding: 5px 15px; 
-    font-size: 14px; 
-    border: 1px solid #63311d; 
-    background-color: #661717; 
-    color: white; 
+    padding: 5px 15px;
+    font-size: 14px;
+    border: 1px solid #63311d;
+    background-color: #4b0e0e;
+    color: white;
     border-radius: 10px;
     cursor: pointer;
-    width: 200px; 
+    width: 200px;
     transition: background-color 0.3s ease;
 }
 
 
 select:hover {
-    background-color: #500e0e; 
+    background-color: #500e0e;
 }
 
 
 select option {
-    padding: 5px 10px; 
+    padding: 5px 10px;
     background-color: #661717;
     color: white;
     font-size: 14px;
@@ -341,7 +360,7 @@ select option {
 
 
 select option:hover {
-    background-color: #661717; 
+    background-color: #661717;
 }
 
 
@@ -352,7 +371,7 @@ input[type='checkbox']:checked {
 .custom-file-upload {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #661717;
+    background-color: #4b0e0e;
     color: white;
     cursor: pointer;
     border-radius: 10px;
@@ -360,15 +379,20 @@ input[type='checkbox']:checked {
 }
 
 .custom-file-upload:hover {
-    background-color: #500e0e;
+    background-color: #440909;
 }
 
 .recipe-image {
-    width: 250px; /* Adjust width */
-    height: 250px; /* Adjust height */
-    object-fit: cover; /* Ensures image scales nicely */
-    border-radius: 10px; /* Optional: rounded corners */
-    border: 2px solid #63311d; /* Optional: adds a border */
+    width: 250px;
+    /* Adjust width */
+    height: 250px;
+    /* Adjust height */
+    object-fit: cover;
+    /* Ensures image scales nicely */
+    border-radius: 10px;
+    /* Optional: rounded corners */
+    border: 2px solid #63311d;
+    /* Optional: adds a border */
 }
 
 
@@ -437,6 +461,7 @@ input[type='checkbox']:checked {
     border-radius: 10px;
     text-align: center;
 }
+
 .recipe-show-container {
     max-width: 900px;
     margin: 0 auto;
@@ -445,11 +470,13 @@ input[type='checkbox']:checked {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .recipe-content {
     display: flex;
     align-items: flex-start;
     gap: 20px;
 }
+
 .recipe-image img {
     width: 250px;
     height: 250px;
@@ -457,6 +484,7 @@ input[type='checkbox']:checked {
     border-radius: 10px;
     border: 2px solid #63311d;
 }
+
 .recipe-details {
     flex: 1;
 }
@@ -486,7 +514,7 @@ input[type='checkbox']:checked {
 }
 
 /* When checkbox is checked, style the label differently */
-.allergen-item input[type="checkbox"]:checked + .allergen-btn {
+.allergen-item input[type="checkbox"]:checked+.allergen-btn {
     background-color: #661717;
     color: white;
     border-color: #500e0e;
