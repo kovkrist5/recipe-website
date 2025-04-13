@@ -51,11 +51,9 @@ class DishController extends Controller
             'allergens'=>'array',
             'prep'=>'integer',
             'cooktime'=> 'nullable|integer',
-
-            /*'ing.*'=>'exists:ing,dishid'*/
-
-
         ]);
+
+
         if($request->has('image')){
             $img =$request->file('image');
             $ext= $img->getClientOriginalExtension() ;
@@ -86,7 +84,7 @@ class DishController extends Controller
         ]);*/
 
         if(empty($request['allergens'])){
-           
+
             return redirect('dish/'.$dish->id)->with('success','');
 
 
@@ -117,12 +115,9 @@ class DishController extends Controller
         $course= Course::all();
         $algid= alg_dish::where('dishid', $dish->id)->get();
         if(!$dish){
-            return("no dish found");
+            return redirect('/')->with('fail',"no dish found");
         }
-        //return view('show', compact('dish'));
         return view("show", ["algid"=>$algid,'alg'=>$alg, 'course'=>$course,"dish"=>$dish]);
-       // return ["algid"=>$algid, 'course'=>$course,"dish"=>$dish];
-
     }
 
     /**
@@ -144,36 +139,50 @@ class DishController extends Controller
     {
 
         $dish= Dish::find($id);
-        
+
        // $message= "idk whats going on";+
 
        $request->validate([
         'name' =>'required|min:3',
         'courseId'=>'required',
         'desc'=> 'string',
-        //'img'=> 'nullable|mimes:png,jpg,jpeg',
+        'img'=> 'nullable|mimes:png,jpg,jpeg',
         'inst'=> 'array',
         'ing'=>'array',
         'allergens'=>'array'
-
-        
-
-
         ]);
+
+
+        /*$imgpath= public_path('dishimg/'.$dish->img);
+
+        if (file_exists($imgpath)) {
+                    //Storage::disk()->delete("../dishimg/1743760478.jpg");
+                unlink($imgpath);
+
+            }
+        if($request->has('image')){
+            $img =$request->file('image');
+            $ext= $img->getClientOriginalExtension() ;
+            $filename=time().'.'.$ext;
+            $imgpath='dishimg/';
+            $img->move($imgpath,$filename);
+        }
+        else{
+            $filename='dish.jpg';
+        }*/
         $dish->update([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
             'desc'=>$request['desc'],
+            //'img'=>$filename,
             'inst'=> $request['instructions'],
             'ing'=>$request['ingredients'],
-
         ]);
+
         alg_dish::where('dishid', $id)->delete();
         if(empty($request['allergens'])){
-           
+
             return redirect('dish/'.$dish->id)->with('success','');
-
-
         }
         else{
             //foreach ($algid as $alg)
@@ -183,17 +192,8 @@ class DishController extends Controller
                         'alg' => $a,
                 ]);
             }
-                
-                
-           // }
-            
-            
         }
-        /*$dish->save();
-        $algid->save();*/
-        
        return redirect("dish/$id");
-
     }
 
     /**
@@ -207,16 +207,16 @@ class DishController extends Controller
        if (file_exists($imgpath)) {
                 //Storage::disk()->delete("../dishimg/1743760478.jpg");
             unlink($imgpath);
-             
-        }
-            
 
-        
+        }
+
+
+
         $dish->delete();
 
 
 
-        return redirect('front')->with('success');
+        return redirect('/')->with('success');
     }
 
 }
