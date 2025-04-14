@@ -7,7 +7,7 @@ body {
     /* background-color: #faf3e0; */
 
     font-family: "Josefin Sans", sans-serif;
-    background-color: #a58571; 
+    background-color: #cabcb3; 
     color: #d6c1ab; 
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,7 +20,7 @@ body {
 
 h1 {
     padding: 15px;
-    color: #e8dbc9;
+    color: #000000;
     text-align: center;
 }
 
@@ -32,7 +32,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #301f16;
+    background-color: #442c20;
     padding: 15px 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -64,7 +64,8 @@ h1 {
 .topnav input[type=text] {
     padding: 8px;
     font-size: 16px;
-    border: 1px solid #ffffff;
+    border: 1px solid #000;
+
     border-radius: 5px;
 }
 
@@ -223,8 +224,8 @@ a {
 
 input[type="text"] {
     border-radius: 10px;
-    background-color: #d8d2cf;
-    border: 1px solid #463224;
+    background-color: #f8f8f8;
+    border: 1px solid #000000;
     color: #e6d4be;
     width: 250px;
     height: 30px;
@@ -275,7 +276,7 @@ button:hover {
 
 input[type="text"] {
     border-radius: 10px;
-    border: 1px solid #d8d6d5;
+    border: 1px solid #000000;
     color: #000000;
     width: 250px;
     height: 28px;
@@ -288,6 +289,7 @@ input[type="text"] {
     width: 250px;
     height: 28px;
     font-size: 14px;
+    background-color: rgb(241, 241, 241);
     border: 1px solid #63311d;
     border-radius: 10px;
     box-sizing: border-box;
@@ -405,7 +407,7 @@ input[type='checkbox']:checked {
     text-align: center;
     margin: 0 auto;
     max-width: 700px;
-    background: #faf3e06e;
+    background: #dad3cf96;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -498,7 +500,7 @@ input[type='checkbox']:checked {
 .allergen-btn {
     display: inline-block;
     padding: 8px 15px;
-    background-color: #e2d6c2;
+    background-color: #e6e3e0;
     color: #3a2f1e;
     border-radius: 20px;
     border: 2px solid #63311d;
@@ -510,7 +512,7 @@ input[type='checkbox']:checked {
 
 /* Hover obv */
 .allergen-btn:hover {
-    background-color: #d0b89f;
+    background-color: #b6a9a9;
 }
 
 /* When checkbox is checked, style the label differently */
