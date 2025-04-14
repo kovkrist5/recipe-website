@@ -24,7 +24,7 @@
                             <div class="card" data-name="{{ strtolower($d->name) }}">
                                 <div><a href="{{ route('dish', $d->id) }}">{{ $d->name }}</a></div>
                                 @php
-                                    $imgSrc = $d->img ? asset('dishimg/' . $d->img) : asset('../placeholder/dish.jpg');
+                                    $imgSrc = $d->img ? ('dishimg/' . $d->img) : ('../placeholder/'.$d->img);
                                 @endphp
                                 <img src="{{ $imgSrc }}" alt="{{ $d->name }}" class="recipe-image">
                                 <div class="card-body">

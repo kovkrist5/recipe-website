@@ -7,7 +7,10 @@
         <h1>{{ $dish->name }}</h1>
         <div class="recipe-content">
             <div class="recipe-image">
-                <img src="../dishimg/{{ $dish->img }}" alt="{{ $dish->name }}">
+                @php
+                $imgSrc = $d->img ? ('dishimg/' . $d->img) : ('../placeholder/'.$d->img);
+                @endphp
+                <img src="{{ $imgSrc }}" alt="{{ $dish->name }}">
             </div>
             <div class="recipe-details">
                 <p><b>Description:</b> {{ $dish->desc }}</p>
