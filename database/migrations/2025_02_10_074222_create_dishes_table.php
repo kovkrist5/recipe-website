@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('courseId')->references('id')->on('courses')->default(8)->onDelete('cascade');
             $table->string('name');
             $table->string('desc')->nullable();
-            $table->string('img')->nullable();
+            $table->string('img')->nullable()->default('dish.jpg');
             $table->json('ing');
             $table->json('inst');
             $table->integer('prep')->nullable(); //minutes

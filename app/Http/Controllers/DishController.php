@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
 use Psy\Exception\BreakException;
 use Symfony\Component\Console\Logger\ConsoleLogger;
 
@@ -60,9 +61,6 @@ class DishController extends Controller
             $filename=time().'.'.$ext;
             $imgpath='dishimg/';
             $img->move($imgpath,$filename);
-        }
-        else{
-            $filename='dish.jpg';
         }
         $dish= Dish::create([
             'name'=> $request['name'],
@@ -137,10 +135,7 @@ class DishController extends Controller
      */
     public function update(Request $request, $id, )
     {
-
         $dish= Dish::find($id);
-
-       // $message= "idk whats going on";+
 
        $request->validate([
         'name' =>'required|min:3',
@@ -152,29 +147,23 @@ class DishController extends Controller
         'allergens'=>'array'
         ]);
 
-
-        /*$imgpath= public_path('dishimg/'.$dish->img);
-
-        if (file_exists($imgpath)) {
-                    //Storage::disk()->delete("../dishimg/1743760478.jpg");
-                unlink($imgpath);
-
-            }
+        $imgpath= public_path('dishimg/'.$dish->img);
         if($request->has('image')){
+            if (File::exists($imgpath)) {
+                File::delete($imgpath);
+                }
             $img =$request->file('image');
             $ext= $img->getClientOriginalExtension() ;
             $filename=time().'.'.$ext;
             $imgpath='dishimg/';
             $img->move($imgpath,$filename);
         }
-        else{
-            $filename='dish.jpg';
-        }*/
+        
         $dish->update([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
             'desc'=>$request['desc'],
-            //'img'=>$filename,
+            'img'=>$filename,
             'inst'=> $request['instructions'],
             'ing'=>$request['ingredients'],
         ]);
@@ -203,18 +192,9 @@ class DishController extends Controller
     {
         $dish=Dish::find($id);
         $imgpath= public_path('dishimg/'.$dish->img);
-
-       if (file_exists($imgpath)) {
-                //Storage::disk()->delete("../dishimg/1743760478.jpg");
-            unlink($imgpath);
-
-        }
-
-
+        if (File::exists($imgpath)) File::delete($imgpath);
 
         $dish->delete();
-
-
 
         return redirect('/')->with('success');
     }

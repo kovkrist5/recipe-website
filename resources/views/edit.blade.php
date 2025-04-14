@@ -7,7 +7,7 @@
 
     <div class="recipe-form-container">
         <h1>Edit {{$dish->name}}</h1>
-        <form class="edit_align" action="{{ route('update', $dish->id) }}" method="post">
+        <form class="edit_align" action="{{ route('update', $dish->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <fieldset>
                 <label for="name"><b>Recipe Name:</b> </label>
