@@ -7,12 +7,11 @@ body {
     /* background-color: #faf3e0; */
 
     font-family: "Josefin Sans", sans-serif;
-    background-color: #a58571; 
-    color: #d6c1ab; 
+    background-color: #c5b494; /* soft warm light beige */
+    color: #3a2e2a; /* deep espresso text */
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #3a2f1e;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -20,19 +19,19 @@ body {
 
 h1 {
     padding: 15px;
-    color: #e8dbc9;
+    color: #000000;
     text-align: center;
 }
 
 .searching {
-    background-color: #d4c9c0;
+    background-color: #2e4234;
 }
 
 .topnav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #301f16;
+    background-color: #2f3f24;
     padding: 15px 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +43,7 @@ h1 {
 
 .topnav a {
     text-decoration: none;
-    color: #d6c1ab;
+    color: #c7b299;
     font-size: 18px;
     padding: 10px 15px;
     border-radius: 5px;
@@ -52,13 +51,13 @@ h1 {
 }
 
 .topnav a:hover {
-    background-color: #4d3a2d; 
-    color: #f1e6d3;
+    background-color: #3b5c4e;
+    color: #ffffff;
     transform: translateY(-3px);
 }
 
 .topnav a.active {
-    background-color: #6b4c3b;
+    background-color: #4a6a59;
 }
 
 .topnav input[type=text] {
@@ -79,17 +78,13 @@ h1 {
 
 .card {
     width: 100%;
-    /* Takes full width of its grid cell */
     max-width: 350px;
-    /* Optional: Prevents overly wide cards */
     align-self: start;
-    /* Prevents stretching */
     border-radius: 8px;
-    background: #531d1d;
-    color: #e1d3c4;
+    background: #ded9d3; 
+    color: #000000;
     transition: all 0.3s ease-in-out;
     padding: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
     padding: 10px;
@@ -104,8 +99,8 @@ h1 {
 }
 
 .card-header {
-    background-color: #3b2b21;
-    color: #f3e9db;
+    background-color: #5a3e36;
+    color: #f5f0ea;
     padding: 10px;
     font-size: 18px;
     border-radius: 8px 8px 0 0;
@@ -114,11 +109,10 @@ h1 {
 .card img {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #ddd;
 }
 
 .card-body {
-    color: #f0e6d9;
+    color: #0e0f13;
     max-height: 0;
     overflow: hidden;
     padding: 0;
@@ -184,7 +178,7 @@ ul {
 /* edit delete */
 a {
     text-decoration: none;
-    color: #ffffff;
+    color:  #0e0f13;
     transition: color 0.3s ease;
 }
 
@@ -223,7 +217,7 @@ a {
 
 input[type="text"] {
     border-radius: 10px;
-    background-color: #d8d2cf;
+    background-color: #ffffff;
     border: 1px solid #463224;
     color: #e6d4be;
     width: 250px;
@@ -235,7 +229,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
     outline: none;
-    border-color: #a8927a;
+    border-color: #ffffff;
 }
 
 button {
@@ -260,11 +254,14 @@ button:hover {
 
 /* Instructions List */
 #instructionsList {
+    
+    color: #ffffff;
     list-style-position: inside;
     padding: 0;
 }
 
 #instructionsList li {
+    color: #000000;
     grid-template-columns: auto auto auto;
     align-items: center;
     gap: 10px;
@@ -275,7 +272,7 @@ button:hover {
 
 input[type="text"] {
     border-radius: 10px;
-    border: 1px solid #d8d6d5;
+    border: 1px solid #000000;
     color: #000000;
     width: 250px;
     height: 28px;
@@ -371,7 +368,7 @@ input[type='checkbox']:checked {
 .custom-file-upload {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4b0e0e;
+    background-color: #4B0E0E;
     color: white;
     cursor: pointer;
     border-radius: 10px;
@@ -560,7 +557,7 @@ input[type='checkbox']:checked {
 #sortToggle {
     padding: 8px 20px;
     border-radius: 10px;
-    background-color: #661717;
+    background-color: #4B0E0E;
     color: white;
     font-size: 16px;
     border: none;
@@ -620,17 +617,33 @@ input[type='checkbox']:checked {
 
 .time-input-group input[type="number"] {
     border-radius: 10px;
-    border: 1px solid #63311d;
+    background-color: #ffffff;
     color: #000000;
+    border: 1px solid #8e9a8b;
     width: 150px;
     height: 30px;
     padding-left: 10px;
     font-size: 16px;
-    background-color: #fff7f0;
     transition: border-color 0.3s ease;
 }
 
 .time-input-group input[type="number"]:focus {
     border-color: #3f3f3f;
     outline: none;
+}
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color:#ded9d3;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.filter-container label,
+.filter-container select,
+.filter-container button {
+    font-size: 1rem;
 }

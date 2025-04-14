@@ -99,3 +99,17 @@
 @endsection
 </fieldset>
 <script src="{{ asset('js/imagePreview.js') }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const courseSelect = document.querySelector('select[name="courseId"]');
+
+    form.addEventListener('submit', function (e) {
+        if (!courseSelect.value) {
+            e.preventDefault(); // Stop the form from submitting
+            alert("Recipe can't go through because course type isn't specified.");
+        }
+    });
+});
+</script>
