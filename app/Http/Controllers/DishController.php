@@ -62,6 +62,9 @@ class DishController extends Controller
             $imgpath='dishimg/';
             $img->move($imgpath,$filename);
         }
+        else {
+            $filename='dish.jpg';
+        }
         $dish= Dish::create([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
@@ -147,8 +150,9 @@ class DishController extends Controller
         'allergens'=>'array'
         ]);
 
-        $imgpath= public_path('dishimg/'.$dish->img);
+        
         if($request->has('image')){
+            $imgpath= public_path('dishimg/'.$dish->img);
             if (File::exists($imgpath)) {
                 File::delete($imgpath);
                 }
@@ -157,6 +161,9 @@ class DishController extends Controller
             $filename=time().'.'.$ext;
             $imgpath='dishimg/';
             $img->move($imgpath,$filename);
+        }
+        else {
+            $filename='dish.jpg';
         }
         
         $dish->update([
@@ -174,7 +181,6 @@ class DishController extends Controller
             return redirect('dish/'.$dish->id)->with('success','');
         }
         else{
-            //foreach ($algid as $alg)
             foreach ($request['allergens'] as $a) {
                 alg_dish::create([
                     'dishid'=>$dish->id,
