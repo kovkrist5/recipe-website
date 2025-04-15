@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const courseSelect = document.querySelector('select[name="courseId"]');
 
-    let previewDataURL = null; // 💾 keep image in memory
+    let previewDataURL = null; 
 
     if (imageInput) {
         imageInput.addEventListener('change', function () {
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hasError) {
                 e.preventDefault();
 
-                // 🧠 Reapply preview if it vanished for some reason
+              
                 if (previewDataURL) {
                     previewImage.src = previewDataURL;
                     previewContainer.style.display = 'flex';

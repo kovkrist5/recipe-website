@@ -8,9 +8,10 @@
         <div class="recipe-content">
             <div class="recipe-image">
                 @php
-                    $imgSrc = $dish->img ? asset('dishimg/' . $dish->img) : asset('placeholder/default.jpg');
+                 $imgSrc = $dish->img ? asset('dishimg/' . $dish->img) : asset('placeholder/default.jpg');
                 @endphp
                 <img src="{{ $imgSrc }}" alt="{{ $dish->name }}" class="recipe-image">
+
 
             </div>
             <div class="recipe-details">
