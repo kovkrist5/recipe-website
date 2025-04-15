@@ -13,6 +13,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #3a2f1e;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -20,12 +21,12 @@ body {
 
 h1 {
     padding: 15px;
-    color: #000000;
+    color: #e8dbc9;
     text-align: center;
 }
 
 .searching {
-    background-color: #2e4234;
+    background-color: #d4c9c0;
 }
 
 .topnav {
@@ -44,7 +45,7 @@ h1 {
 
 .topnav a {
     text-decoration: none;
-    color: #c7b299;
+    color: #d6c1ab;
     font-size: 18px;
     padding: 10px 15px;
     border-radius: 5px;
@@ -52,20 +53,19 @@ h1 {
 }
 
 .topnav a:hover {
-    background-color: #3b5c4e;
-    color: #ffffff;
+    background-color: #4d3a2d; 
+    color: #f1e6d3;
     transform: translateY(-3px);
 }
 
 .topnav a.active {
-    background-color: #4a6a59;
+    background-color: #6b4c3b;
 }
 
 .topnav input[type=text] {
     padding: 8px;
     font-size: 16px;
-    border: 1px solid #000;
-
+    border: 1px solid #ffffff;
     border-radius: 5px;
 }
 
@@ -80,13 +80,17 @@ h1 {
 
 .card {
     width: 100%;
+    /* Takes full width of its grid cell */
     max-width: 350px;
+    /* Optional: Prevents overly wide cards */
     align-self: start;
+    /* Prevents stretching */
     border-radius: 8px;
-    background: #ded9d3; 
-    color: #000000;
+    background: #531d1d;
+    color: #e1d3c4;
     transition: all 0.3s ease-in-out;
     padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
     padding: 10px;
@@ -101,8 +105,8 @@ h1 {
 }
 
 .card-header {
-    background-color: #5a3e36;
-    color: #f5f0ea;
+    background-color: #3b2b21;
+    color: #f3e9db;
     padding: 10px;
     font-size: 18px;
     border-radius: 8px 8px 0 0;
@@ -111,10 +115,11 @@ h1 {
 .card img {
     width: 100%;
     height: auto;
+    border-bottom: 1px solid #ddd;
 }
 
 .card-body {
-    color: #0e0f13;
+    color: #f0e6d9;
     max-height: 0;
     overflow: hidden;
     padding: 0;
@@ -180,7 +185,7 @@ ul {
 /* edit delete */
 a {
     text-decoration: none;
-    color:  #0e0f13;
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
@@ -219,8 +224,8 @@ a {
 
 input[type="text"] {
     border-radius: 10px;
-    background-color: #f8f8f8;
-    border: 1px solid #000000;
+    background-color: #d8d2cf;
+    border: 1px solid #463224;
     color: #e6d4be;
     width: 250px;
     height: 30px;
@@ -231,7 +236,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
     outline: none;
-    border-color: #ffffff;
+    border-color: #a8927a;
 }
 
 button {
@@ -256,14 +261,11 @@ button:hover {
 
 /* Instructions List */
 #instructionsList {
-    
-    color: #ffffff;
     list-style-position: inside;
     padding: 0;
 }
 
 #instructionsList li {
-    color: #000000;
     grid-template-columns: auto auto auto;
     align-items: center;
     gap: 10px;
@@ -274,7 +276,7 @@ button:hover {
 
 input[type="text"] {
     border-radius: 10px;
-    border: 1px solid #000000;
+    border: 1px solid #d8d6d5;
     color: #000000;
     width: 250px;
     height: 28px;
@@ -287,7 +289,6 @@ input[type="text"] {
     width: 250px;
     height: 28px;
     font-size: 14px;
-    background-color: rgb(241, 241, 241);
     border: 1px solid #63311d;
     border-radius: 10px;
     box-sizing: border-box;
@@ -371,7 +372,7 @@ input[type='checkbox']:checked {
 .custom-file-upload {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4B0E0E;
+    background-color: #4b0e0e;
     color: white;
     cursor: pointer;
     border-radius: 10px;
@@ -405,7 +406,7 @@ input[type='checkbox']:checked {
     text-align: center;
     margin: 0 auto;
     max-width: 700px;
-    background: #dad3cf96;
+    background: #faf3e06e;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -498,7 +499,7 @@ input[type='checkbox']:checked {
 .allergen-btn {
     display: inline-block;
     padding: 8px 15px;
-    background-color: #e6e3e0;
+    background-color: #e2d6c2;
     color: #3a2f1e;
     border-radius: 20px;
     border: 2px solid #63311d;
@@ -510,7 +511,7 @@ input[type='checkbox']:checked {
 
 /* Hover obv */
 .allergen-btn:hover {
-    background-color: #b6a9a9;
+    background-color: #d0b89f;
 }
 
 /* When checkbox is checked, style the label differently */
@@ -560,7 +561,7 @@ input[type='checkbox']:checked {
 #sortToggle {
     padding: 8px 20px;
     border-radius: 10px;
-    background-color: #4B0E0E;
+    background-color: #661717;
     color: white;
     font-size: 16px;
     border: none;
@@ -620,33 +621,17 @@ input[type='checkbox']:checked {
 
 .time-input-group input[type="number"] {
     border-radius: 10px;
-    background-color: #ffffff;
+    border: 1px solid #63311d;
     color: #000000;
-    border: 1px solid #8e9a8b;
     width: 150px;
     height: 30px;
     padding-left: 10px;
     font-size: 16px;
+    background-color: #fff7f0;
     transition: border-color 0.3s ease;
 }
 
 .time-input-group input[type="number"]:focus {
     border-color: #3f3f3f;
     outline: none;
-}
-.filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    background-color:#ded9d3;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    align-items: center;
-}
-
-.filter-container label,
-.filter-container select,
-.filter-container button {
-    font-size: 1rem;
 }

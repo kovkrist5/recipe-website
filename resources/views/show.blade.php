@@ -2,21 +2,15 @@
 @section('content')
 @section('title', '| Show Recipe')
 @section('css', '../../css/front.css')
-    <!--make it so times show up and take out one of the allergen labels-->
+<!--make it so times show up and take out one of the allergen labels-->
     <div class="recipe-show-container">
         <h1>{{ $dish->name }}</h1>
         <div class="recipe-content">
             <div class="recipe-image">
-                <div class="recipe-image">
-                    @php
-                        $imgPath = public_path('dishimg/' . $dish->img);
-                        $imgSrc = (isset($dish->img) && File::exists($imgPath))
-                            ? asset('dishimg/' . $dish->img)
-                            : asset('placeholder/dish.jpg');
-                    @endphp
-                    <img src="{{ $imgSrc }}" alt="{{ $dish->name }}" class="recipe-image">
-                </div>
-
+                @php
+                $imgSrc = $d->img ? ('dishimg/' . $d->img) : ('../placeholder/'.$d->img);
+                @endphp
+                <img src="{{ $imgSrc }}" alt="{{ $dish->name }}">
             </div>
             <div class="recipe-details">
                 <p><b>Description:</b> {{ $dish->desc }}</p>
@@ -34,7 +28,7 @@
                     @endforeach
                 </ul>
                 <div class="recipe-details">
-
+                   
                     <p><b>Course:</b> {{ $dish->course->courseName }}</p>
 
                     <p><b>Preparation Time:</b> {{ $dish->prep_time }} minutes</p>
