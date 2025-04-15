@@ -106,8 +106,8 @@ h1 {
 }
 
 .card-header {
-    background-color: #3b2b21;
-    color: #f3e9db;
+    text-align: center;
+    color: #000000;
     padding: 10px;
     font-size: 18px;
     border-radius: 8px 8px 0 0;
@@ -115,7 +115,8 @@ h1 {
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card-body {
@@ -146,6 +147,17 @@ h1 {
     opacity: 0;
 }
 
+.card-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 350px;
+}
+
+.card-container {
+    align-items: stretch; /* Ensures all cards fill the row height equally */
+}
 
 @media screen and (max-width: 1200px) {
     .card-container {

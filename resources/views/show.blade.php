@@ -31,8 +31,8 @@
                 </ul>
                 <div class="recipe-details">
 
-                    <p><b>Preparation Time:</b> {{ $dish->prep_time }} minutes</p>
-                    <p><b>Cook Time:</b> {{ $dish->cook_time }} minutes</p>
+                    <p><b>Preparation Time:</b> {{ $dish->prep }} minutes</p>
+                    <p><b>Cook Time:</b> {{ $dish->cooktime }} minutes</p>
 
                     <p><b>Allergens:</b></p>
                     <div class="allergen-tags">
