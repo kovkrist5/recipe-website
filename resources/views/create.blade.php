@@ -1,4 +1,3 @@
-<!--move times above inst and put it next to each other-->
 
 @extends('layouts.app')
 
@@ -102,16 +101,64 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('form');
-        const courseSelect = document.querySelector('select[name="courseId"]');
-    
-        form.addEventListener('submit', function (e) {
-            if (!courseSelect.value) {
-                e.preventDefault(); // Stop the form from submitting
-                alert("Recipe can't go through because course type isn't specified.");
+document.addEventListener('DOMContentLoaded', function () {
+    const imageInput = document.getElementById('image');
+    const previewContainer = document.getElementById('imagePreviewContainer');
+    const previewImage = document.getElementById('imagePreview');
+    const deleteBtn = document.getElementById('deleteImageBtn');
+    const form = document.querySelector('form');
+    const courseSelect = document.querySelector('select[name="courseId"]');
+
+    let previewDataURL = null; // 💾 keep image in memory
+
+    if (imageInput) {
+        imageInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    previewDataURL = e.target.result; // store it
+                    previewImage.src = previewDataURL;
+                    previewContainer.style.display = 'flex';
+                };
+
+                reader.readAsDataURL(file);
             }
         });
-    });
-    </script>
+    }
+
+    if (deleteBtn) {
+        deleteBtn.addEventListener('click', function () {
+            imageInput.value = '';
+            previewDataURL = null;
+            previewContainer.style.display = 'none';
+            previewImage.src = '#';
+        });
+    }
+
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            let hasError = false;
+
+            // Basic validation
+            if (!courseSelect.value) {
+                alert("Recipe can't go through because course type isn't specified.");
+                hasError = true;
+            }
+
+            if (hasError) {
+                e.preventDefault();
+
+                // 🧠 Reapply preview if it vanished for some reason
+                if (previewDataURL) {
+                    previewImage.src = previewDataURL;
+                    previewContainer.style.display = 'flex';
+                }
+            }
+        });
+    }
+});
+</script>
+
     
