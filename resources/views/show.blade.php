@@ -8,7 +8,7 @@
         <div class="recipe-content">
             <div class="recipe-image">
                 @php
-                $imgSrc = $d->img ? ('dishimg/' . $d->img) : ('../placeholder/'.$d->img);
+                $imgSrc = $dish->img ? ('dishimg/' . $dish->img) : ('../placeholder/'.$dish->img);
                 @endphp
                 <img src="{{ $imgSrc }}" alt="{{ $dish->name }}">
             </div>
@@ -28,7 +28,7 @@
                     @endforeach
                 </ul>
                 <div class="recipe-details">
-                   
+
                     <p><b>Course:</b> {{ $dish->course->courseName }}</p>
 
                     <p><b>Preparation Time:</b> {{ $dish->prep_time }} minutes</p>

@@ -24,7 +24,9 @@ class DishController extends Controller
     {
 
         $dish= Dish::all();
-        return view('front', compact('dish'));
+        $alg= Allergen::all();
+        $course= Course::all();
+        return view("front", ['alg'=>$alg, 'course'=>$course,"dish"=>$dish]);
     }
 
     /**
@@ -114,11 +116,10 @@ class DishController extends Controller
         $dish=Dish::with(['course', 'allergens'])->find( $id ) ;
         $alg= Allergen::all();
         $course= Course::all();
-        $algid= alg_dish::where('dishid', $dish->id)->get();
         if(!$dish){
             return redirect('/')->with('fail',"no dish found");
         }
-        return view("show", ["algid"=>$algid,'alg'=>$alg, 'course'=>$course,"dish"=>$dish]);
+        return view("show", ['alg'=>$alg, 'course'=>$course,"dish"=>$dish]);
     }
 
     /**
@@ -150,7 +151,7 @@ class DishController extends Controller
         'allergens'=>'array'
         ]);
 
-        
+
         if($request->has('image')){
             $imgpath= public_path('dishimg/'.$dish->img);
             if (File::exists($imgpath)) {
@@ -165,7 +166,7 @@ class DishController extends Controller
         else {
             $filename='dish.jpg';
         }
-        
+
         $dish->update([
             'name'=> $request['name'],
             'courseId'=>$request['courseId'],
