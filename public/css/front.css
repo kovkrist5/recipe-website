@@ -635,3 +635,20 @@ input[type='checkbox']:checked {
     border-color: #3f3f3f;
     outline: none;
 }
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color:#ded9d3;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.filter-container label,
+.filter-container select,
+.filter-container button {
+    font-size: 1rem;
+}
