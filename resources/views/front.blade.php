@@ -17,15 +17,10 @@
             <div class="filter-container">
                 <label for="categoryFilter">Category:</label>
                 <select id="categoryFilter">
-                    <option value="">All</option>
-                    <option value="appetizer">Appetizer</option>
-                    <option value="soup">Soup</option>
-                    <option value="main dish">Main Dish</option>
-                    <option value="side dish">Side Dish</option>
-                    <option value="salad">Salad</option>
-                    <option value="dessert">Dessert</option>
-                    <option value="pastry">Pastry</option>
-                    <option value="other">Other</option>
+                <option value="">-- All --</option>
+                    @foreach ($course as $c)
+                        <option value="{{ $c->id }}">{{ $c->courseName }}</option>
+                    @endforeach
                 </select>
 
                 <label for="timeFilter">Prep Time:</label>
