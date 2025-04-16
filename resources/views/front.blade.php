@@ -45,7 +45,7 @@
         @endforeach
     </div>
 </main>
-@endsection
+
 
 @section('scripts')
     <script>
@@ -83,4 +83,5 @@
         });
     });
 </script>
+@endsection
 @endsection
