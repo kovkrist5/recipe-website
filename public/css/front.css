@@ -1,15 +1,18 @@
 /*COLOR IDEAS https://www.color-hex.com/color-palette/1056873*/
 * {
     font-family: "Merriweather", serif;
-    
+
 }
 
+.footer {
+    text-align: center;
+}
 body {
     /* background-color: #faf3e0; */
 
     font-family: "Josefin Sans", sans-serif;
-    background-color:#C5B494; 
-    color: #000000; 
+    background-color: #C5B494;
+    color: #000000;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -21,7 +24,7 @@ body {
 
 h1 {
     padding: 15px;
-    color: #e8dbc9;
+    color: #000000;
     text-align: center;
 }
 
@@ -53,7 +56,7 @@ h1 {
 }
 
 .topnav a:hover {
-    background-color: #4d3a2d; 
+    background-color: #4d3a2d;
     color: #f1e6d3;
     transform: translateY(-3px);
 }
@@ -86,7 +89,7 @@ h1 {
     align-self: start;
     /* Prevents stretching */
     border-radius: 8px;
-    background: #531d1d;
+    background: #DED9D3;
     color: #e1d3c4;
     transition: all 0.3s ease-in-out;
     padding: 5px;
@@ -94,10 +97,11 @@ h1 {
     overflow: hidden;
     position: relative;
     padding: 10px;
-    
+
 }
 
 .card a {
+    color: black;
     text-align: center;
     font-weight: bold;
     display: block;
@@ -105,8 +109,8 @@ h1 {
 }
 
 .card-header {
-    background-color: #3b2b21;
-    color: #f3e9db;
+    text-align: center;
+    color: #000000;
     padding: 10px;
     font-size: 18px;
     border-radius: 8px 8px 0 0;
@@ -114,12 +118,12 @@ h1 {
 
 .card img {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card-body {
-    color: #f0e6d9;
+    color: black;
     max-height: 0;
     overflow: hidden;
     padding: 0;
@@ -128,6 +132,7 @@ h1 {
 }
 
 .card-body p {
+
     text-align: center;
 }
 
@@ -145,6 +150,17 @@ h1 {
     opacity: 0;
 }
 
+.card-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 350px;
+}
+
+.card-container {
+    align-items: stretch; /* Ensures all cards fill the row height equally */
+}
 
 @media screen and (max-width: 1200px) {
     .card-container {
@@ -224,7 +240,7 @@ a {
 
 input[type="text"] {
     border-radius: 10px;
-    background-color: #d8d2cf;
+    background-color: #ffffff;
     border: 1px solid #463224;
     color: #e6d4be;
     width: 250px;
@@ -276,7 +292,7 @@ button:hover {
 
 input[type="text"] {
     border-radius: 10px;
-    border: 1px solid #d8d6d5;
+    border: 1px solid #000000;
     color: #000000;
     width: 250px;
     height: 28px;
@@ -384,7 +400,7 @@ input[type='checkbox']:checked {
 }
 
 .recipe-image {
-    
+
     width: 250px;
     /* Adjust width */
     height: 250px;
@@ -634,4 +650,21 @@ input[type='checkbox']:checked {
 .time-input-group input[type="number"]:focus {
     border-color: #3f3f3f;
     outline: none;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: #ded9d3;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.filter-container label,
+.filter-container select,
+.filter-container button {
+    font-size: 1rem;
 }
